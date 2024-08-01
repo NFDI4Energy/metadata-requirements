@@ -23,3 +23,6 @@ Further guidelines on how to create issues is currently under development.
 This repository does contain some general requirements (as markdown file) for the usage of metadata profiles in general.
 Moreover, there will be more markdown files to target metadata for special types of data sets - each having their own scope and requirements.
 
+You can find non-functional requirements [here](non-functional-requirements.md).
+
+The requirements file for each respective module can be found in this [subfolder](modules/).
