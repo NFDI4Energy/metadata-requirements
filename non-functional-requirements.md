@@ -2,13 +2,41 @@
 
 Metadata can come in numerous flavors and therefore should allow to be used in multiple contexts.
 
-## 1) Supported serialization formats
+## Metadata serialization formats need to be standardized
 
-In general, metadata in an RDF format is preferred since it enables it to be stored in triple store databases.
-This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples.
+|||
+|---|---|
+|**Title**|Metadata serialization formats need to be standardized|
+|**ID**|REQ-METADATA-FORMAT-STANDARDS|
+|**Goal**|Make sure that metadata is stored with a standardized serialization format, so most tools and frameworks natively support parsing and serializing it|
+|**Description**||
+|**Creation date**|2024-08-15|
+|**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
+|**Solution idea**|This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
 
+## Metadata serialization formats shall be storable in triple store databases
 
-Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.
+|||
+|---|---|
+|**Title**|Metadata serialization formats shall be storable in a way that supports SPARQL federation|
+|**ID**|REQ-METADATA-FORMAT-FEDERATION|
+|**Goal**|Metadata shall be easily queriable among federated endpoints|
+|**Description**|Finding metadata works best in a federated environment. So we want to make sure that the metadata records used for any NFDI4Energy service are stored in a way that allows for SPARQL federation. Either with native or virtual SPARQL endpoints|
+|**Creation date**|2024-09-19|
+|**Linked terms**||
+|**Solution idea**|Triplestore databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
+
+## Metadata serialization format validation
+
+|||
+|---|---|
+|**Title**|Metadata serialization format validation|
+|**ID**|REQ-METADATA-FORMAT-VALIDATION|
+|**Goal**|Validation of metadata records improves the quality of metadata|
+|**Description**|Validation techniques need to be available for the used serialization formats that are used for metadata records|
+|**Creation date**|2024-08-15|
+|**Linked terms**||
+|**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied.|
 
 ## 2) Provided schema files
 
