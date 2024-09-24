@@ -73,18 +73,30 @@ If the formalization supports multiple languages other languages can be added as
 
 ## 8) Tooling
 
-### Metadata Implementation Tools
+### Metadata record Implementation Tools
 
 |||
 |---|---|
 |**Title**|Metadata Implementation Tools|
 |**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
 |**Goal**|Ensure that the implementation of the metadata schema is both comprehensive and user-friendly.|
-|**Description**|The metadata implementation tools need to support both web services and software plugins, tailored to the specific needs of energy-related software. Thses tools should support multiple programming languages and are able to capture all the relevant metadata.|
+|**Description**|The metadata creation and editing tools need to be aviliable as both web services and software plugins, tailored to the specific needs of energy-related software. Thses tools should support multiple programming languages and are able to capture all the relevant metadata.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|metadata records creating and editing as a web service.|
+
+
+### Metadata schema Implementation Tools
+
+|||
+|---|---|
+|**Title**|Metadata Implementation Tools|
+|**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
+|**Goal**|Ensure that the implementation of the metadata schema is both comprehensive and user-friendly.|
+|**Description**|The Metadata schema shall be created and maintained using state-of-the-art tools of the semantic web domain|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
-
 
 ### Metadata Integration Tools
 
@@ -93,11 +105,23 @@ If the formalization supports multiple languages other languages can be added as
 |**Title**|Metadata Integration Tools|
 |**ID**|REQ-METADATA-TOOLING-INTEGRATION|
 |**Goal**|Create a unified metadata schema that ensures all relevant metadata is included, but can also be customized to specific needs and use cases.|
-|**Description**|The metadata integration tools should define explicit rules for what metadata fields are necessary and which are optional. These tools should allow users to select from a predefined families of metadata, ensuring that relevant metadata is captured.|
+|**Description**|The metadata integration tools should define explicit rules for what metadata fields are necessary and which are optional. These tools should allow users to select from domain-specific metadata schemas/modules, ensuring that relevant metadata is captured.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|Some existing ontoloy matching tools can be used for metadata integration|
+|**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state.|
 
+
+### Metadata Integration Tools
+
+|||
+|---|---|
+|**Title**|Metadata Integration Tools|
+|**ID**|REQ-METADATA-TOOLING-INTEGRATION|
+|**Goal**|Make it easy for tool developers to integrate with our schema, even if it has been using a different metadata schema before|
+|**Description**|We need to provide a service that allows metadata record conversion from one schema to another|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|Some existing ontoloy matching tools can be used for metadata schema matching which then form the foundation for automated metadata record conversion.|
 
 
 ### Metadata Validation Tools
@@ -107,10 +131,10 @@ If the formalization supports multiple languages other languages can be added as
 |**Title**|Metadata Validation Tools|
 |**ID**|REQ-METADATA-TOOLING-VALIDATION|
 |**Goal**|Make sure that metadata schema is accurate, complete, and compliant with predefined standards.|
-|**Description**|Metadata validation tools can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
+|**Description**|Metadata schema validation tools ensure that data registries can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**||
+|**Solution idea**|OBO-Foundry, OOPS!, ...|
 
 ### Metadata Improvement Tools
 
@@ -118,21 +142,21 @@ If the formalization supports multiple languages other languages can be added as
 |---|---|
 |**Title**|Metadata Improvement Tools|
 |**ID**|REQ-METADATA-TOOLING-IMPROVEMENT|
-|**Goal**|Enhance the interoperability of the metadata schema with other metadata schems and improve the quality of metadata.|
-|**Description**|The metadata improvement tools should provide functionality to edit existing metadata records and integrate the metadata standards from different sources together.|
+|**Goal**|Enhance the interoperability of the metadata schema with other metadata schemas and improve the quality of metadata.|
+|**Description**|When editing the schema it is important to try to reuse existing terms. Finding these can be aided with the use of terminology search. Additionally cross-walks between metadata standards can help to improve interoperability.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|Protege can be used to improve metadata schema.|
+|**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards.|
 
 Only one formal specification of the metadata schema can be considered to root schema.
 Any other potential schema serialization must be generated from this root specification.
 An example for this would be the generation of JSON schema files from an OWL formalization.
 
-## 9) Metadata Versionalization Tools
+## 9) Metadata Versioning Tools
 
 |||
 |---|---|
-|**Title**|Metadata Versionalization Tools|
+|**Title**|Metadata Versioning Tools|
 |**ID**|REQ-METADATA-TOOLING-VERSIONING|
 |**Goal**|Implement version control for metadata schema.|
 |**Description**|A new version shall come with a migration script to convert existing entries to a newer version of the schema.|
