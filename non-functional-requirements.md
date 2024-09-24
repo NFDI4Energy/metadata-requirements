@@ -73,29 +73,74 @@ If the formalization supports multiple languages other languages can be added as
 
 ## 8) Tooling
 
-### 8.1) Schema Editing
+### Metadata Implementation Tools
 
-The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.
+|||
+|---|---|
+|**Title**|Metadata Implementation Tools|
+|**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
+|**Goal**|Ensure that the implementation of the metadata schema is both comprehensive and user-friendly.|
+|**Description**|The metadata implementation tools need to support both web services and software plugins, tailored to the specific needs of energy-related software. Thses tools should support multiple programming languages and are able to capture all the relevant metadata.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
 
-The core schema shall be edited in Protege.
 
-### 8.2) Analysis and Validation
+### Metadata Integration Tools
 
-Each new release of the schema must be checked with analysis tools to avoid design flaws and other smells.
+|||
+|---|---|
+|**Title**|Metadata Integration Tools|
+|**ID**|REQ-METADATA-TOOLING-INTEGRATION|
+|**Goal**|Create a unified metadata schema that ensures all relevant metadata is included, but can also be customized to specific needs and use cases.|
+|**Description**|The metadata integration tools should define explicit rules for what metadata fields are necessary and which are optional. These tools should allow users to select from a predefined families of metadata, ensuring that relevant metadata is captured.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|Some existing ontoloy matching tools can be used for metadata integration|
 
-At this point a list of recommended tools will be added in the future.
 
-### 8.3) Conversion
+
+### Metadata Validation Tools
+
+|||
+|---|---|
+|**Title**|Metadata Validation Tools|
+|**ID**|REQ-METADATA-TOOLING-VALIDATION|
+|**Goal**|Make sure that metadata schema is accurate, complete, and compliant with predefined standards.|
+|**Description**|Metadata validation tools can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**||
+
+### Metadata Improvement Tools
+
+|||
+|---|---|
+|**Title**|Metadata Improvement Tools|
+|**ID**|REQ-METADATA-TOOLING-IMPROVEMENT|
+|**Goal**|Enhance the interoperability of the metadata schema with other metadata schems and improve the quality of metadata.|
+|**Description**|The metadata improvement tools should provide functionality to edit existing metadata records and integrate the metadata standards from different sources together.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|Protege can be used to improve metadata schema.|
 
 Only one formal specification of the metadata schema can be considered to root schema.
 Any other potential schema serialization must be generated from this root specification.
 An example for this would be the generation of JSON schema files from an OWL formalization.
 
-## 9) Versioning
+## 9) Metadata Versionalization Tools
 
-The metadata schema must be versioned using git tags.
-This way, the persistent URLs for the schema files include the respective version number.
-A new version shall come with a migration script to convert existing entries to a newer version of the schema.
+|||
+|---|---|
+|**Title**|Metadata Versionalization Tools|
+|**ID**|REQ-METADATA-TOOLING-VERSIONING|
+|**Goal**|Implement version control for metadata schema.|
+|**Description**|A new version shall come with a migration script to convert existing entries to a newer version of the schema.|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|The metadata schema can be versioned using git tags, in this way, the persistent URLs of the metadata schema files will contain the respective version number. Each new release of the schema must be checked with analysis tools to avoid design flaws and other smells.|
+
+
 
 ## 10) Usage guide
 
