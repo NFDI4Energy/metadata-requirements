@@ -35,22 +35,24 @@ Think about stakeholders for the module.
 |---|---|---|
 |Title|String|A short string capturing the requirement's context|
 |ID|GUPRI|Globally unqiue and resolveable identifier of the requirement (e.g. concat module with name part)|
-|Goal|String|Description why this module is important|
-|Description|String|Medium length text to describe the specification of the requirement|
+|Description|String|Medium length text to describe the specification of the requirement and why it is needed|
 |Creation Date|Date|First insertion of the requirement to the list|
 |Linked terms|List of URIs|Link terms of ontologies that are relevant|
 |Solution idea|Text|Describe a potential solution that satisfies the requirement|
+|Priority|Integer|A integer to describe priority - lower is higher (Range [1-5])|
 
 ### Example
 |||
 |---|---|
 |**Title**|Metadata serialization formats need to be standardized|
 |**ID**|REQ-METADATA-FORMATS|
-|**Goal**|Make sure that metadata is stored with a standardized serialization format, so most tools and frameworks natively support parsing and serializing it|
-|**Description**|To guarantee widespread compatibility it is necessary to rely on data formats that are widely accepted in the real world and most languages / frameworks and tools can handle that kind of data|
+|**Description**|To guarantee widespread compatibility it is necessary to rely on data formats that are widely accepted in the real world and most languages / frameworks and tools can handle that kind of data, more precisely most tools and frameworks should natively support parsing and serializing it|
 |**Creation date**|2024-08-15|
 |**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
 |**Solution idea**|In general, metadata in an RDF format is preferred since it enables it to be stored in triple store databases. This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
+|**Priority**|3|
+
+Priority is an important field and should be added.
 
 
 ### Template
@@ -58,8 +60,8 @@ Think about stakeholders for the module.
 |---|---|
 |**Title**||
 |**ID**|REQ-|
-|**Goal**||
 |**Description**||
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**||
+|**Priority**|5|
