@@ -35,7 +35,17 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary.|
 
-#### 📜Filds need to be clustered into mandatory, optional
+#### 📜Fields need to be categorized by importance
+
+|||
+|---|---|
+|**ID**|REQ-FIELD-IMPORTANCE|
+|**Description**|To allow users to quickly grasp which metadata fields are more important we need to cluster them into mandatory, optional, etc. |
+|**Creation date**|2024-10-22|
+|**Linked terms**||
+|**Solution idea**|Additional attribute for all metadata fields|
+|**Priority**|5|
+
 
 #### 📜Modularity
 
@@ -105,7 +115,15 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
 |**Solution idea**|This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
 
-#### 📝 Metadata records consisting of ...
+#### 📝 Metadata record submodules storage structure
+|||
+|---|---|
+|**ID**|REQ-METADATA-SUBMODULE-STORAGE-STRUCTURE|
+|**Description**|Submodules will need to reference each other and a flat way of storage is superior if multiple submodules might reference the same submodule|
+|**Creation date**|2024-10-22|
+|**Linked terms**||
+|**Solution idea**|Use JSON $ref in JSON and the respective URIs in RDF based file formats|
+|**Priority**|5|
 
 
 ### Tooling
@@ -167,7 +185,16 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**||
 |**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state.|
 
-#### 🔧 ...
+#### 🔧 Provide export capabilities
+|||
+|---|---|
+|**ID**|REQ-STANDARD-EXPORTS|
+|**Description**|To boost compatibility and interoperability it is necessary to provide exports in a selection of well established metadata standards|
+|**Creation date**|2024-10-22|
+|**Linked terms**||
+|**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, Datacite, ...|
+|**Priority**|4|
+
 
 ## Use 
 ### Metadata Schema
@@ -179,7 +206,7 @@ Each metadata module / profile and each individual metadata field shall have a d
 #### 📜Usage guide
 
 The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly.
-This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers.
+This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also it needs to motiviate why the usage of metadata and respective standards is important.
 
 #### 📜Visualize different use of terminology among reused / mapped schemas and ontologies
 |||
@@ -226,7 +253,16 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Provide more like a dialog with a chatbot than a form and use modern web frameworks to build the UI.|
 
-#### 📝UI shall enable users ...
+#### 📝Linking between metadata records
+|||
+|---|---|
+|**ID**|REQ-METADATA-RECORD-LINKING|
+|**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow to link between metadata records easily|
+|**Creation date**|2024-08-15|
+|**Linked terms**||
+|**Solution idea**|Additional field for related datasets and a indexed search to find other entities from the existing knowledge graph|
+|**Priority**|5|
+
 
 
 ### Tooling
