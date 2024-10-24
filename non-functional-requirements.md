@@ -5,7 +5,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 ## Design
 ### Metadata Schema
 
-#### 📜Links between metadata records
+#### 1) 📜Links between metadata records
 |||
 |---|---|
 |**ID**|REQ-LINKED-METADATA|
@@ -15,7 +15,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Provide a generic metadata module in the schema that focuses on relations to other datasets and think about a good collection of relations between them.|
 
-#### 📜The metadata schema reuses agreed upon terms and semantics
+#### 2) 📜The metadata schema reuses agreed upon terms and semantics
 |||
 |---|---|
 |**ID**|REQ-SCHEMA-REUSE-AGREED-SEMANTICS|
@@ -25,7 +25,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Importing / Referencing of all ontologies that provide useful terms or semantics|
 
-#### 📜Fields in the schema shall use controlled vocabularies as much as possible
+#### 3) 📜Fields in the schema shall use controlled vocabularies as much as possible
 |||
 |---|---|
 |**ID**|REQ-CONTROLLED-VOCABULARIES|
@@ -35,7 +35,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary.|
 
-#### 📜Fields need to be categorized by importance
+#### 4) 📜Fields need to be categorized by importance
 
 |||
 |---|---|
@@ -47,7 +47,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Priority**|5|
 
 
-#### 📜Modularity
+#### 5) 📜Modularity
 
 Metadata should be tailored specifically for the type of data being annotated.
 Many metadata fields are not relevant to a slightly different data set.
@@ -57,14 +57,14 @@ This means each data set is likely to require multiple metadata modules / profil
 A strategy to find relevant modules will eventually be published by our working groups.
 
 
-#### 📜Language
+#### 6) 📜Language
 
 The language used to specify metadata modules / profiles and metadata fields must be English.
 If the formalization supports multiple languages other languages can be added as well, but English needs to be the one with the highest priority.
 
 
 ### Tooling
-#### 🔧 Metadata Improvement Tools
+#### 7) 🔧 Metadata Improvement Tools
 
 |||
 |---|---|
@@ -80,7 +80,7 @@ If the formalization supports multiple languages other languages can be added as
 
 ### Metadata Schema
 
-#### 📜Provided schema files
+#### 8) 📜Provided schema files
 
 Schema files shall be provided as Turtle/Notation3 and as JSON schema.
 Both for standard JSON and JSON-LD?!
@@ -92,7 +92,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 
 ### Metadata Record
 
-#### 📝Metadata serialization formats shall be storable in a way that supports SPARQL federation
+#### 9) 📝Metadata serialization formats shall be storable in a way that supports SPARQL federation
 
 |||
 |---|---|
@@ -104,7 +104,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Solution idea**|Triplestore databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
 
 
-#### 📝Metadata serialization formats need to be standardized
+#### 10) 📝Metadata serialization formats need to be standardized
 
 |||
 |---|---|
@@ -115,7 +115,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
 |**Solution idea**|This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
 
-#### 📝 Metadata record submodules storage structure
+#### 11) 📝 Metadata record submodules storage structure
 |||
 |---|---|
 |**ID**|REQ-METADATA-SUBMODULE-STORAGE-STRUCTURE|
@@ -128,7 +128,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 
 ### Tooling
 
-#### 🔧 Metadata Implementation Tools
+#### 12) 🔧 Metadata Implementation Tools
 |||
 |---|---|
 |**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
@@ -138,7 +138,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**||
 |**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
 
-#### 🔧 Metadata record Implementation Tools
+#### 13) 🔧 Metadata record Implementation Tools
 
 |||
 |---|---|
@@ -152,7 +152,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 ## Integration
 ### Metadata Schema
 
-#### 📜Allow interoperability between existing metadata standards
+#### 14) 📜Allow interoperability between existing metadata standards
 |||
 |---|---|
 |**ID**|REQ-STANDARD-INTEROPERABILITY|
@@ -162,7 +162,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**||
 |**Solution idea**|Schema crosswalks to the most relevant standards are helpful for federated searches and form a foundation of format conversions. Scripts shall be provided to convert from and to our schema for a selected set of standards.|
 
-#### 📜Requirements for applications using the metadata schema
+#### 15) 📜Requirements for applications using the metadata schema
 |||
 |---|---|
 |**ID**|REQ-TOOL-REQUIREMENTS|
@@ -174,7 +174,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 
 
 ### Tooling
-#### 🔧 Metadata Integration Tools
+#### 16) 🔧 Metadata Integration Tools
 
 |||
 |---|---|
@@ -185,7 +185,7 @@ An example for this would be the generation of JSON schema files from an OWL for
 |**Linked terms**||
 |**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state.|
 
-#### 🔧 Provide export capabilities
+#### 17) 🔧 Provide export capabilities
 |||
 |---|---|
 |**ID**|REQ-STANDARD-EXPORTS|
@@ -199,16 +199,16 @@ An example for this would be the generation of JSON schema files from an OWL for
 ## Use 
 ### Metadata Schema
 
-#### 📜Online documentation
+#### 18) 📜Online documentation
 
 Each metadata module / profile and each individual metadata field shall have a definition and description text that is available online.
 
-#### 📜Usage guide
+#### 19) 📜Usage guide
 
 The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly.
 This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also it needs to motiviate why the usage of metadata and respective standards is important.
 
-#### 📜Visualize different use of terminology among reused / mapped schemas and ontologies
+#### 20) 📜Visualize different use of terminology among reused / mapped schemas and ontologies
 |||
 |---|---|
 |**ID**|REQ-DOCUMENTATION-TERMINOLOGY-DIFFERENCES|
@@ -218,7 +218,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Use terminology from thesauri or SKOS to express "similarTerms", "similarButDifferent" and "notToBeConfusedWith" relations.|
 
-#### 📜Documentation shall be understandable for users that need to fill or read metadata records
+#### 21) 📜Documentation shall be understandable for users that need to fill or read metadata records
 
 |||
 |---|---|
@@ -229,7 +229,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 
-#### 📜Allow for a curated way to extend controlled vocabularies
+#### 22) 📜Allow for a curated way to extend controlled vocabularies
 
 |||
 |---|---|
@@ -243,7 +243,7 @@ This shall include different user perspectives including but not limited to data
 
 ### Metadata Record
 
-#### 📝Metadata UI needs to be simple and streamlined
+#### 23) 📝Metadata UI needs to be simple and streamlined
 |||
 |---|---|
 |**ID**|REQ-SIMPLE-UI|
@@ -253,7 +253,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Provide more like a dialog with a chatbot than a form and use modern web frameworks to build the UI.|
 
-#### 📝Linking between metadata records
+#### 24) 📝Linking between metadata records
 |||
 |---|---|
 |**ID**|REQ-METADATA-RECORD-LINKING|
@@ -267,7 +267,7 @@ This shall include different user perspectives including but not limited to data
 
 ### Tooling
 
-#### 🔧 Metadata Integration Tools
+#### 25) 🔧 Metadata Integration Tools
 
 |||
 |---|---|
@@ -282,7 +282,7 @@ This shall include different user perspectives including but not limited to data
 ## Review
 ### Metadata Schema
 
-#### 📜Documentation shall clearly show the terms used from other ontologies / schemas
+#### 26) 📜Documentation shall clearly show the terms used from other ontologies / schemas
 |||
 |---|---|
 |**Title**||
@@ -293,7 +293,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Markdown and HTML both support named links to external sources|
 
-#### 📜Metadata schema / standard needs to have a clear versioning scheme
+#### 27) 📜Metadata schema / standard needs to have a clear versioning scheme
 |||
 |---|---|
 |**ID**|REQ-SCHEMA-VERSIONING|
@@ -305,7 +305,7 @@ This shall include different user perspectives including but not limited to data
 
 ### Metadata Record
 
-#### 📝Metadata serialization format validation
+#### 28) 📝Metadata serialization format validation
 
 |||
 |---|---|
@@ -319,7 +319,7 @@ This shall include different user perspectives including but not limited to data
 
 ### Tooling
 
-#### 🔧Version control shall be applied for documentation
+#### 29) 🔧Version control shall be applied for documentation
 |||
 |---|---|
 |**ID**|REQ-DOCUMENTATION-VERSION-CONTROL|
@@ -330,7 +330,7 @@ This shall include different user perspectives including but not limited to data
 |**Solution idea**|Github is a good foundation for the documentation source files and can also host the actual online documentation|
 
 
-#### 🔧 Metadata Versioning Tools
+#### 30) 🔧 Metadata Versioning Tools
 |||
 |---|---|
 |**ID**|REQ-METADATA-TOOLING-VERSIONING|
@@ -342,7 +342,7 @@ This shall include different user perspectives including but not limited to data
 
 
 
-#### 🔧 Metadata Validation Tools
+#### 31) 🔧 Metadata Validation Tools
 |||
 |---|---|
 |**ID**|REQ-METADATA-TOOLING-VALIDATION|
