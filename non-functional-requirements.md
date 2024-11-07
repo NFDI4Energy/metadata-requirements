@@ -87,12 +87,12 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-IMPROVEMENT|
-|**Goal**|Enhance the interoperability of the metadata schema with other metadata schemas and improve the quality of metadata.|
-|**Description**|When editing the schema it is important to try to reuse existing terms. Finding these can be aided with the use of terminology search. Additionally cross-walks between metadata standards can help to improve interoperability.|
+|**ID**|REQ-DESIGN-TOOLING-IMPROVEMENT|
+|**Description**|To enhance the interoperability of the metadata schema with other metadata schemas and improve the overall quality of metadata, it is important to try to reuse existing terms. Finding these can be aided with the use of terminology search and cross-walks between metadata standards. The used design tools shall assist the developer in applying these mechanisms.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards.|
+|**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards. Otherwise a plugin might be configurable against a DBPedia Lookup that was initialized with common metadata standards.|
+|**Priority**|Medium|
 
 
 ## Implementation
@@ -101,13 +101,14 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 #### 8) 📜Provided schema files
 
-Schema files shall be provided as Turtle/Notation3 and as JSON schema.
-Both for standard JSON and JSON-LD?!
-
-Only one formal specification of the metadata schema can be considered to root schema.
-Any other potential schema serialization must be generated from this root specification.
-An example for this would be the generation of JSON schema files from an OWL formalization.
-
+|||
+|---|---|
+|**ID**|REQ-IMPL-SCHEMA-PROVIDED-FILES|
+|**Description**|A formalized specification of the schema is necessary. The preferred format is in a semantic format like Turtle/Notation3. Additionally the schema files shall be provided as JSON schema (both plain JSON and JSON-ld) as a convenience for external use cases. Only the semantic format can be considered the root schema and the others most be updated on every change respectively. These types of formats are prioritized because of their validation and form generation capabilities|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|JSON-Schema files can be generated from an OWL/SHACL specification of the root schema|
+|**Priority**|High|
 
 ### Metadata Record
 
