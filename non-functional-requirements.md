@@ -8,63 +8,82 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 #### 1) 📜Links between metadata records
 |||
 |---|---|
-|**ID**|REQ-LINKED-METADATA|
-|**Goal**|Help users to traverse semantically linked metadata records that are similiar, different, related, etc.|
-|**Description**|When metadata records allow to link to other metadata records it is easier to navigate through a collection of artifacts to find out which are related in any way. This can either mean a similar project, similar purpose, explicit difference to another metadata record, etc.|
+|**ID**|REQ-DESIGN-SCHEMA-LINKED-METADATA|
+|**Description**|Help users to traverse semantically linked metadata records that are similiar, different, related, etc. This can involve data from the same or different project, a similar purpose or an explicitly specified difference. This can be achieved using an explicit field for links in the metadata schema|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Provide a generic metadata module in the schema that focuses on relations to other datasets and think about a good collection of relations between them.|
+|**Priority**|Low|
 
 #### 2) 📜The metadata schema reuses agreed upon terms and semantics
 |||
 |---|---|
-|**ID**|REQ-SCHEMA-REUSE-AGREED-SEMANTICS|
-|**Goal**|Do not create duplicate definitions to have improved interoperability|
-|**Description**|The terms and semantics used for the schema should be from pre-existing ontologies as much as possible.|
+|**ID**|REQ-DESIGN-SCHEMA-REUSE-AGREED-SEMANTICS|
+|**Description**|It is vital to not create duplicate definitions to improve interoperability. This should be done using pre-existing ontologies wherever possible|
 |**Creation date**|2024-09-17|
 |**Linked terms**||
 |**Solution idea**|Importing / Referencing of all ontologies that provide useful terms or semantics|
+|**Priority**|High|
 
 #### 3) 📜Fields in the schema shall use controlled vocabularies as much as possible
 |||
 |---|---|
-|**ID**|REQ-CONTROLLED-VOCABULARIES|
-|**Goal**|Prevent the interoperability issues that arise with custom human input|
-|**Description**|Controlled vocabularies are a good way to allow proper linking and interoperability between different datasets|
+|**ID**|REQ-DESIGN-SCHEMA-CONTROLLED-VOCABULARIES|
+|**Description**|Prevent the interoperability issues that arise with custom human input, by using controlled vocabularies for user input where possible|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary.|
+|**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary. Consider using Terminology services or special term lookup services like the DBpedia Lookup|
+|**Priority**|High|
 
 #### 4) 📜Fields need to be categorized by importance
 
 |||
 |---|---|
-|**ID**|REQ-FIELD-IMPORTANCE|
+|**ID**|REQ-DESIGN-SCHEMA-FIELD-IMPORTANCE|
 |**Description**|To allow users to quickly grasp which metadata fields are more important we need to cluster them into mandatory, optional, etc. |
 |**Creation date**|2024-10-22|
 |**Linked terms**||
-|**Solution idea**|Additional attribute for all metadata fields|
-|**Priority**|5|
+|**Solution idea**|Additional attribute for all metadata fields (compare OEM Badges)|
+|**Priority**|Medium|
 
 
 #### 5) 📜Modularity
 
-Metadata should be tailored specifically for the type of data being annotated.
-Many metadata fields are not relevant to a slightly different data set.
-As a result, each metadata module / profile must have a precise and limited scope.
-Smaller is often better in this context.
-This means each data set is likely to require multiple metadata modules / profiles to be properly annotated.
-A strategy to find relevant modules will eventually be published by our working groups.
+
+|||
+|---|---|
+|**ID**|REQ-DESIGN-SCHEMA-MODULARITY|
+|**Description**|To ensure a good quality of metadata for a given entity it is important to have specifically tailored sets of metadata fields. It makes sense to group several fields together if they always appear in a common context. Each of these modules needs to have a precise and limited scope. Smaller is often better in this context.|
+|**Creation date**|2024-10-22|
+|**Linked terms**||
+|**Solution idea**|Cluster metadata fields in modules and allow one entity to be annotated by a set of these modules. A strategy to find the correct modules needs to be worked out|
+|**Priority**|High|
 
 
 #### 6) 📜Language
 
-The language used to specify metadata modules / profiles and metadata fields must be English.
-If the formalization supports multiple languages other languages can be added as well, but English needs to be the one with the highest priority.
-
+|||
+|---|---|
+|**ID**|REQ-DESIGN-SCHEMA-LANGUAGE|
+|**Description**|Since key value maps only see a key equal if it matches 100% it is necessary to have all keys in a common language. We propose to use only English names for the keys. If a serialization format allows multiple languages also other languages can be supported, but English must have the highest priority|
+|**Creation date**|2024-10-22|
+|**Linked terms**||
+|**Solution idea**|Just use English keys for the fields and perform translations only with annotation properties|
+|**Priority**|High|
 
 ### Tooling
-#### 7) 🔧 Metadata Improvement Tools
+
+#### 12) 🔧 Metadata Schema Implementation Tools
+|||
+|---|---|
+|**ID**|REQ-DESIGN-TOOLING-STATE-OF-THE-ART|
+|**Description**|The Metadata schema shall be created and maintained using state-of-the-art tools of the semantic web domain|
+|**Creation date**|2024-09-23|
+|**Linked terms**||
+|**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
+|**Priority**|High|
+
+#### 7) 🔧 Metadata Schema Improvement Tools
 
 |||
 |---|---|
@@ -128,26 +147,16 @@ An example for this would be the generation of JSON schema files from an OWL for
 
 ### Tooling
 
-#### 12) 🔧 Metadata Implementation Tools
-|||
-|---|---|
-|**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
-|**Goal**|Ensure that the implementation of the metadata schema is both comprehensive and user-friendly.|
-|**Description**|The Metadata schema shall be created and maintained using state-of-the-art tools of the semantic web domain|
-|**Creation date**|2024-09-23|
-|**Linked terms**||
-|**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
-
 #### 13) 🔧 Metadata record Implementation Tools
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-IMPLEMENT|
-|**Goal**|Ensure that the implementation of the metadata schema is both comprehensive and user-friendly.|
-|**Description**|The metadata creation and editing tools need to be aviliable as both web services and software plugins, tailored to the specific needs of energy-related software. Thses tools should support multiple programming languages and are able to capture all the relevant metadata.|
+|**ID**|REQ-IMPL-TOOLING-RECORD-CREATION-SERVICE|
+|**Description**|To ensure that the creation of metadata records can be done easily from different application contexts a service solution for the creation can be beneficial. So this service could be embedded via an application plugin. Such a service can therefore support multiple programming languages.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|metadata records creating and editing as a web service.|
+|**Solution idea**|metadata record cration and editing as a web service.|
+|**Priority**|Medium|
 
 ## Integration
 ### Metadata Schema
@@ -155,22 +164,22 @@ An example for this would be the generation of JSON schema files from an OWL for
 #### 14) 📜Allow interoperability between existing metadata standards
 |||
 |---|---|
-|**ID**|REQ-STANDARD-INTEROPERABILITY|
-|**Goal**|Metadata records for our schema should be easily interoperable with other platforms that use different schemas|
-|**Description**|Interoperability of different metadata standards is important for our application this allows to prevent re-annotation of metadata in other formats and supports other platforms to access our artifacts more easily|
+|**ID**|REQ-INTEGRATION-SCHEMA-STANDARD-INTEROPERABILITY|
+|**Description**|Metadata records for our schema should be easily interoperable with other platforms that use different schemas, as it prevents re-annotation of metadata in other formats and supports data access to and from other platforms|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|Schema crosswalks to the most relevant standards are helpful for federated searches and form a foundation of format conversions. Scripts shall be provided to convert from and to our schema for a selected set of standards.|
+|**Solution idea**|Schema crosswalks to the most relevant standards are helpful for federated searches and form a foundation of format conversions. Scripts shall be provided to convert from and to our schema for a selected set of standards. Evaluate formalized (semantic) formats for crosswalks and recommend one that can be integrated into existing knowledge graphs / ontologies.|
+|**Priority**|Medium|
 
 #### 15) 📜Requirements for applications using the metadata schema
 |||
 |---|---|
-|**ID**|REQ-TOOL-REQUIREMENTS|
-|**Goal**|Allow developers to get going with the schema quickly with a clear set of requirements|
-|**Description**|The documentation shall provide requirements that each application using the metadata schema and its records needs to fulfil. This makes sure developers can get started more quickly and have a clear set of rules a new application can be checked to be compatible.|
+|**ID**|REQ-INTEGRATION-SCHEMA-APPLICATION-REQUIREMENTS|
+|**Description**|Allow developers to get going with the schema quickly with a clear set of requirements on how to integrate and work with the metadata schema and records. All applications that want to work with the standard are obliged to follow these guidelines.|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|Extrapolate a subset of theses requirements on this page and format them on some kind of online documentation.|
+|**Solution idea**|Extrapolate a subset of the requirements on this page and format them on some kind of online documentation.|
+|**Priority**|Low|
 
 
 ### Tooling
@@ -218,16 +227,16 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Use terminology from thesauri or SKOS to express "similarTerms", "similarButDifferent" and "notToBeConfusedWith" relations.|
 
-#### 21) 📜Documentation shall be understandable for users that need to fill or read metadata records
+#### 21) 📜Schema documentation shall be understandable for users that need to fill or read metadata
 
 |||
 |---|---|
-|**ID**|REQ-DOCUMENTATION-STAKEHOLDER-USERS|
-|**Goal**|The documentation must provide helpful information to users without semantics or metadata background|
-|**Description**|Oftentimes documentation focuses on developers or assumes some kind of background on side of the users. This shall not be the case with the metadata schema documentation. Everybody that needs to fill or look at a metadata record should be able to understand the documentation.|
+|**ID**|REQ-USE-SCHEMA-DOCUMENTATION-STAKEHOLDER-USERS|
+|**Description**|The schema documentation must provide helpful information to users without semantics or metadata background, so it should not just be focused around developers|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
+|**Priority**|Medium|
 
 #### 22) 📜Allow for a curated way to extend controlled vocabularies
 
@@ -246,24 +255,43 @@ This shall include different user perspectives including but not limited to data
 #### 23) 📝Metadata UI needs to be simple and streamlined
 |||
 |---|---|
-|**ID**|REQ-SIMPLE-UI|
-|**Goal**|Don't annoy or scare users with complex forms or workflows|
-|**Description**|Any UI that is used to create metadata forms needs to be simple and streamlined because users are easily scared off and do not enter metadata at all. Make the hurdle to do it as simple as possible|
+|**ID**|REQ-USE-RECORD-SIMPLE-UI|
+|**Description**|Don't annoy or scare users with complex forms or workflows as this will prevent them from entering data alltogether. Simple and streamlined processes and UIs are key.|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|Provide more like a dialog with a chatbot than a form and use modern web frameworks to build the UI.|
+|**Solution idea**|Provide either a wizard/survey like form with multiple small pages or a dialog with a chatbot rather than a form and use modern web frameworks to build the UI.|
+|**Priority**|High|
 
-#### 24) 📝Linking between metadata records
+#### 24) 📝Simplify linking between metadata records
 |||
 |---|---|
-|**ID**|REQ-METADATA-RECORD-LINKING|
-|**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow to link between metadata records easily|
+|**ID**|REQ-USE-RECORD-SIMPLIFY-LINKING|
+|**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow to link between metadata records easily. Users are not likely to manually look up relations themselves. As a result any user interface should assist the user in finding appropriate potentially related metadata records automatically.|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|Additional field for related datasets and a indexed search to find other entities from the existing knowledge graph|
-|**Priority**|5|
+|**Solution idea**|Search for strategies how to identify metadata records with a certain degree of similarties, such that a service can propose them to be added as a related metadata record. (Use the OEP scenario comparision as a foundation)|
+|**Priority**|Low|
 
+#### XX) 📝Metadata record value languages
+|||
+|---|---|
+|**ID**|REQ-USE-RECORD-LANGUAGES|
+|**Description**|Ontologies do support annotation in multiple languages so any user interface shall be allowed to present metadata in any given language as long as the formal serialization is again in the standard language. Controlled vocabularies might also provide translations for a given item.|
+|**Creation date**|2024-11-07|
+|**Linked terms**||
+|**Solution idea**|User interface code can use the respective language annotations for labels when displaying both fieldnames and selected (controlled) values|
+|**Priority**|Low|
 
+#### XX) 📝Metadata usage documentation shall be understandable for users that need to fill or read metadata
+
+|||
+|---|---|
+|**ID**|REQ-USE-RECORD-DOCUMENTATION-STAKEHOLDER-USERS|
+|**Description**|The workflow documentation must provide helpful information to users without data management background and shall allow everybody to get started with metadata annotation.|
+|**Creation date**|2024-11-07|
+|**Linked terms**||
+|**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
+|**Priority**|Medium|
 
 ### Tooling
 
@@ -309,12 +337,12 @@ This shall include different user perspectives including but not limited to data
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-FORMAT-VALIDATION|
-|**Goal**|Validation of metadata records improves the quality of metadata|
-|**Description**|Validation techniques need to be available for the used serialization formats that are used for metadata records|
+|**ID**|REQ-REVIEW-RECORD-FORMAT-VALIDATION|
+|**Description**|Validation of metadata records improves the quality of metadata. Therefore used record serializations must allow for standardized validation mechanisms. Validation needs to be done in two stages (client and server) to first improve UX and second guarantee record conformance|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
-|**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied.|
+|**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied. Web user interfaces often support client side validation this should be applied whenever possible.|
+|**Priority**|High|
 
 
 ### Tooling
