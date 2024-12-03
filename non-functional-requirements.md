@@ -14,6 +14,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Provide a generic metadata module in the schema that focuses on relations to other datasets and think about a good collection of relations between them.|
 |**Priority**|Low|
+|**OEMetadata**| ✔ Links between metadata records are established at different levels alrady: topics, subject, tags, context! And a seperate field is more difficult to harmonise. |
 
 #### 2) 📜The metadata schema reuses agreed upon terms and semantics
 |||
@@ -24,6 +25,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Importing / Referencing of all ontologies that provide useful terms or semantics|
 |**Priority**|High|
+|**OEMetadata**| ✔ Based on Datapackage and DCAT-AP |
 
 #### 3) 📜Fields in the schema shall use controlled vocabularies as much as possible
 |||
@@ -34,6 +36,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary. Consider using Terminology services or special term lookup services like the DBpedia Lookup|
 |**Priority**|High|
+|**OEMetadata**| ✔ OEMetadata has an LOEP feature. |
 
 #### 4) 📜Fields need to be categorized by importance
 
@@ -45,6 +48,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Additional attribute for all metadata fields (compare OEM Badges)|
 |**Priority**|Medium|
+|**OEMetadata**| ✔ Mandatory and Optional. Badges for additional effort. |
 
 
 #### 5) 📜Modularity
@@ -58,6 +62,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Cluster metadata fields in modules and allow one entity to be annotated by a set of these modules. A strategy to find the correct modules needs to be worked out|
 |**Priority**|High|
+|**OEMetadata**| ✔ Datapackage has basic structure, additional groups are implemented. But (JSON) nesting is annoying. |
 
 
 #### 6) 📜Language
@@ -70,6 +75,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Just use English keys for the fields and perform translations only with annotation properties|
 |**Priority**|High|
+|**OEMetadata**| ✔ EN |
 
 ### Tooling
 
@@ -82,6 +88,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
 |**Priority**|High|
+|**OEMetadata**| ✔🛠 https://github.com/OpenEnergyPlatform/oemetadata JSON schema. Protege? |
 
 #### 7) 🔧 Metadata Schema Improvement Tools
 
@@ -93,6 +100,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards. Otherwise a plugin might be configurable against a DBPedia Lookup that was initialized with common metadata standards.|
 |**Priority**|Medium|
+|**OEMetadata**| ? |
 
 
 ## Implementation
@@ -109,6 +117,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|JSON-Schema files can be generated from an OWL/SHACL specification of the root schema|
 |**Priority**|High|
+|**OEMetadata**| 🛠 JSON schema modules forbetter maintenance. No turtle yet. |
 
 ### Metadata Record
 
@@ -122,6 +131,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Creation date**|2024-09-19|
 |**Linked terms**||
 |**Solution idea**|Triplestore databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
+|**OEMetadata**| ✔ OEMetadata is part of the Databus / MOSS: https://moss.openenergyplatform.org/ |
 
 
 #### 10) 📝Metadata serialization formats need to be standardized
@@ -134,6 +144,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Creation date**|2024-08-15|
 |**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
 |**Solution idea**|This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
+|**OEMetadata**| ✔🛠 Used JSON schema. Add RDF. |
 
 #### 11) 📝 Metadata record submodules storage structure
 |||
@@ -144,6 +155,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Use JSON $ref in JSON and the respective URIs in RDF based file formats|
 |**Priority**|5|
+|**OEMetadata**| ✔ Implemented JSOn schema submodules and script to generate. |
 
 
 ### Tooling
@@ -156,8 +168,9 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|To ensure that the creation of metadata records can be done easily from different application contexts a service solution for the creation can be beneficial. So this service could be embedded via an application plugin. Such a service can therefore support multiple programming languages.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|metadata record cration and editing as a web service.|
+|**Solution idea**|metadata record creation and editing as a web service.|
 |**Priority**|Medium|
+|**OEMetadata**| ✔ OEMetadataBuilder https://openenergyplatform.org/dataedit/oemetabuilder/ |
 
 ## Integration
 ### Metadata Schema
@@ -171,6 +184,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Schema crosswalks to the most relevant standards are helpful for federated searches and form a foundation of format conversions. Scripts shall be provided to convert from and to our schema for a selected set of standards. Evaluate formalized (semantic) formats for crosswalks and recommend one that can be integrated into existing knowledge graphs / ontologies.|
 |**Priority**|Medium|
+|**OEMetadata**| 🛠 Implement mappings and crosswalks in OMI (ongoing development)|
 
 #### 15) 📜Requirements for applications using the metadata schema
 |||
@@ -181,6 +195,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Extrapolate a subset of the requirements on this page and format them on some kind of online documentation.|
 |**Priority**|Low|
+|**OEMetadata**| 🛠 Add to documentation |
 
 
 ### Tooling
@@ -194,6 +209,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state.|
+|**OEMetadata**| 🛠 Badges to priotise metadata keys. Develop templates for different ressources: timeseries, geodata, parameter...  |
 
 #### 17) 🔧 Provide export capabilities
 |||
@@ -204,6 +220,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Linked terms**||
 |**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, Datacite, ...|
 |**Priority**|4|
+|**OEMetadata**| ✔🛠 Mappings to DCAT-AP, Dublin Core, INSPIRE, Data Cite, Zenodo. Implement crosswalks in OMI. |
 
 
 ## Use 
@@ -227,6 +244,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Use terminology from thesauri or SKOS to express "similarTerms", "similarButDifferent" and "notToBeConfusedWith" relations.|
+|**OEMetadata**| ✔🛠 Include SKOS in the metadata crosswalks in OMI. |
 
 #### 21) 📜Schema documentation shall be understandable for users that need to fill or read metadata
 
@@ -238,6 +256,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 |**Priority**|Medium|
+|**OEMetadata**| ✔🛠 Documentation in MkDocs. |
 
 #### 22) 📜Allow for a curated way to extend controlled vocabularies
 
@@ -249,6 +268,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Embedding a terminology search into a metadata input form when there can be no proper choice made to find a reference in an ontology for a term. If the term from the other ontology fulfills yet to be determined characteristics it might be possible to extend the vocabulary with that term (initially for the time the form is active) and on a long run the added "external" terms could be curated and either accepted or revoked centrally for the schema.|
+|**OEMetadata**| ✔🛠 Terminology is part of the OEO. A link to OEO-X has been added to the OEMetadataBuilder.Improve workflow! |
 
 
 ### Metadata Record
@@ -262,6 +282,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Provide either a wizard/survey like form with multiple small pages or a dialog with a chatbot rather than a form and use modern web frameworks to build the UI.|
 |**Priority**|High|
+|**OEMetadata**| ✔🛠 OEMetadataBuilder has been updated with tabs. Contains LOEP for OEO annotations. Feedback wanted. |
 
 #### 24) 📝Simplify linking between metadata records
 |||
@@ -272,6 +293,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|Search for strategies how to identify metadata records with a certain degree of similarties, such that a service can propose them to be added as a related metadata record. (Use the OEP scenario comparision as a foundation)|
 |**Priority**|Low|
+|**OEMetadata**| ✔ Links are done with tags. Datapackage (Datase) can contain multiple resources (distributions). |
 
 #### XX) 📝Metadata record value languages
 |||
@@ -282,6 +304,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|User interface code can use the respective language annotations for labels when displaying both fieldnames and selected (controlled) values|
 |**Priority**|Low|
+|**OEMetadata**| ? |
 
 #### XX) 📝Metadata usage documentation shall be understandable for users that need to fill or read metadata
 
@@ -293,6 +316,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 |**Priority**|Medium|
+|**OEMetadata**| ✔🛠 Existing Academy Course: https://openenergyplatform.github.io/academy/courses/07_metadata/ Update to 2.0|
 
 ### Tooling
 
@@ -306,6 +330,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|Some existing ontoloy matching tools can be used for metadata schema matching which then form the foundation for automated metadata record conversion.|
+|**OEMetadata**| 🛠 Implement mappings in OMI (ongoing development) |
 
 
 ## Review
@@ -321,6 +346,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Markdown and HTML both support named links to external sources|
+|**OEMetadata**| ? |
 
 #### 27) 📜Metadata schema / standard needs to have a clear versioning scheme
 |||
@@ -331,6 +357,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Semantic versioning for the schema and reference the versioned URL of the schema in each metadata record|
+|**OEMetadata**| ✔ Implemented versions for standard + latest |
 
 ### Metadata Record
 
@@ -344,6 +371,7 @@ This shall include different user perspectives including but not limited to data
 |**Linked terms**||
 |**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied. Web user interfaces often support client side validation this should be applied whenever possible.|
 |**Priority**|High|
+|**OEMetadata**| ✔🛠 Implemented validations in OMI: Check datapackage, check JSON schema. |
 
 
 ### Tooling
@@ -357,6 +385,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-09-19|
 |**Linked terms**||
 |**Solution idea**|Github is a good foundation for the documentation source files and can also host the actual online documentation|
+|**OEMetadata**| ✔🛠 Use mkdocs and mike for documentation versioning |
 
 
 #### 30) 🔧 Metadata Versioning Tools
@@ -368,6 +397,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|The metadata schema can be versioned using git tags, in this way, the persistent URLs of the metadata schema files will contain the respective version number. Each new release of the schema must be checked with analysis tools to avoid design flaws and other smells.|
+|**OEMetadata**| ✔ Version control implemented |
 
 
 
@@ -380,6 +410,7 @@ This shall include different user perspectives including but not limited to data
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|OBO-Foundry, OOPS!, ...|
+|**OEMetadata**| ✔🛠 Implemented validations in OMI: Check datapackage, check JSON schema. Misses check linceses, etc.|
 
 
 
