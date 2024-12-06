@@ -137,7 +137,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 #### 11) 📝 Metadata record submodules storage structure
 |||
 |---|---|
-|**ID**|REQ-METADATA-SUBMODULE-STORAGE-STRUCTURE|
+|**ID**|REQ-IMPL-RECORD-METADATA-SUBMODULE-STORAGE-STRUCTURE|
 |**Description**|Submodules will need to reference each other and a flat way of storage is superior if multiple submodules might reference the same submodule|
 |**Creation date**|2024-10-22|
 |**Linked terms**|https://schema.org/DefinedTermSet (A submodule is a Defined Term Set that contains metadata fields relevant to the topic of the submodule.) https://schema.org/inDefinedTermSet (could use this to note if a term belongs to more than one submodule) https://schema.org/citation (could use this property of a Defined Term Set to track other sets that it references)|
@@ -206,7 +206,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Priority**|Medium|
 
 
-## Use 
+## Use
 ### Metadata Schema
 
 #### 18) 📜Online documentation
@@ -225,8 +225,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-USE-SCHEMA-USAGE-GUIDE|
-|**Description**|The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly.
-This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also, it needs to motivate why the usage of metadata and respective standards is important.|
+|**Description**|The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly. This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also, it needs to motivate why the usage of metadata and respective standards is important.|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Additional Markdown based documentation that can accompany the generated GitHub pages.|
