@@ -116,24 +116,23 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-FORMAT-FEDERATION|
-|**Goal**|Metadata shall be easily queriable among federated endpoints|
-|**Description**|Finding metadata works best in a federated environment. So we want to make sure that the metadata records used for any NFDI4Energy service are stored in a way that allows for SPARQL federation. Either with native or virtual SPARQL endpoints|
+|**ID**|REQ-IMPL-RECORD-STORAGE-FEDERATION|
+|**Description**|Metadata shall be easily queriable among federated SPARQL endpoints, to improve findability. Queries should function with either native or virtual endpoints.|
 |**Creation date**|2024-09-19|
-|**Linked terms**||
+|**Linked terms**|https://schema.org/SearchAction, https://schema.org/EntryPoint, https://schema.org/query, https://schema.org/includedInDataCatalog, http://edamontology.org/data_2080, http://edamontology.org/format_3748, http://edamontology.org/format_2195|
 |**Solution idea**|Triplestore databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
-
+|**Priority**|high|
 
 #### 10) 📝Metadata serialization formats need to be standardized
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-FORMAT-STANDARDS|
-|**Goal**|Make sure that metadata is stored with a standardized serialization format, so most tools and frameworks natively support parsing and serializing it|
-|**Description**||
+|**ID**|REQ-IMPL-RECORD-FORMAT-STANDARDS|
+|**Description**|Make sure that metadata is stored with a standardized serialization format, so most tools and frameworks natively support parsing and serializing it|
 |**Creation date**|2024-08-15|
 |**Linked terms**|http://purl.obolibrary.org/obo/NCIT_C171252, http://edamontology.org/format_1915, https://schema.org/encodingFormat|
 |**Solution idea**|This means the preferred serialization formats are RDF/XML, JSON-LD, Turtle, N3 and Ntriples. Nevertheless, other standardized formats as XML, JSON, YAML and TOML are also valid and can be used.|
+|**Priority**|high|
 
 #### 11) 📝 Metadata record submodules storage structure
 |||
@@ -141,9 +140,9 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-METADATA-SUBMODULE-STORAGE-STRUCTURE|
 |**Description**|Submodules will need to reference each other and a flat way of storage is superior if multiple submodules might reference the same submodule|
 |**Creation date**|2024-10-22|
-|**Linked terms**||
+|**Linked terms**|https://schema.org/DefinedTermSet (A submodule is a Defined Term Set that contains metadata fields relevant to the topic of the submodule.) https://schema.org/inDefinedTermSet (could use this to note if a term belongs to more than one submodule) https://schema.org/citation (could use this property of a Defined Term Set to track other sets that it references)|
 |**Solution idea**|Use JSON $ref in JSON and the respective URIs in RDF based file formats|
-|**Priority**|5|
+|**Priority**|high|
 
 
 ### Tooling
@@ -156,7 +155,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|To ensure that the creation of metadata records can be done easily from different application contexts a service solution for the creation can be beneficial. So this service could be embedded via an application plugin. Such a service can therefore support multiple programming languages.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|metadata record cration and editing as a web service.|
+|**Solution idea**|Metadata record creation and editing as a web service.|
 |**Priority**|Medium|
 
 ## Integration
@@ -175,7 +174,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 #### 15) 📜Requirements for applications using the metadata schema
 |||
 |---|---|
-|**ID**|REQ-INTEGRATION-SCHEMA-APPLICATION-REQUIREMENTS|
+|**ID**|REQ-INTEGRATION-SCHEMA-APPLICATION-GUIDELINES|
 |**Description**|Allow developers to get going with the schema quickly with a clear set of requirements on how to integrate and work with the metadata schema and records. All applications that want to work with the standard are obliged to follow these guidelines.|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
@@ -188,22 +187,23 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-INTEGRATION|
-|**Goal**|Create a unified metadata schema that ensures all relevant metadata is included, but can also be customized to specific needs and use cases.|
-|**Description**|The metadata integration tools should define explicit rules for what metadata fields are necessary and which are optional. These tools should allow users to select from domain-specific metadata schemas/modules, ensuring that relevant metadata is captured.|
+|**ID**|REQ-INTEGRATION-TOOLING-METADATA-FLEXIBILITY-FOR-APPLICATIONS|
+|**Description**|A unified metadata schema used by the tools shall provide capabilities that allows each tool to customize the schema in certain limits to be best suited for the given use case of the tool. For example tools should be able to define explicit rules for what metadata fields are necessary and which are optional. Also the use of certain domain-specific metadata schemas/modules should be controllable, ensuring that relevant metadata is captured.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
-|**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state.|
+|**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state. This could work best with a service that produces metadata forms that can be configured via the parameters to the endpoint|
+|**Priority**|Medium|
 
 #### 17) 🔧 Provide export capabilities
+
 |||
 |---|---|
-|**ID**|REQ-STANDARD-EXPORTS|
+|**ID**|REQ-INTEGRATION-TOOLING-STANDARD-EXPORTS|
 |**Description**|To boost compatibility and interoperability it is necessary to provide exports in a selection of well established metadata standards|
 |**Creation date**|2024-10-22|
 |**Linked terms**||
 |**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, Datacite, ...|
-|**Priority**|4|
+|**Priority**|Medium|
 
 
 ## Use 
@@ -211,22 +211,36 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 #### 18) 📜Online documentation
 
-Each metadata module / profile and each individual metadata field shall have a definition and description text that is available online.
+|||
+|---|---|
+|**ID**|REQ-USE-SCHEMA-DOCUMENTATION|
+|**Description**|Each metadata module / profile, and each individual metadata field shall have a definition and description text that is available online.|
+|**Creation date**|2024-08-15|
+|**Linked terms**||
+|**Solution idea**|Generated documentation on GitHub pages|
+|**Priority**|high|
 
 #### 19) 📜Usage guide
 
-The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly.
-This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also it needs to motiviate why the usage of metadata and respective standards is important.
+|||
+|---|---|
+|**ID**|REQ-USE-SCHEMA-USAGE-GUIDE|
+|**Description**|The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly.
+This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also, it needs to motivate why the usage of metadata and respective standards is important.|
+|**Creation date**|2024-08-15|
+|**Linked terms**||
+|**Solution idea**|Additional Markdown based documentation that can accompany the generated GitHub pages.|
+|**Priority**|medium|
 
 #### 20) 📜Visualize different use of terminology among reused / mapped schemas and ontologies
 |||
 |---|---|
-|**ID**|REQ-DOCUMENTATION-TERMINOLOGY-DIFFERENCES|
-|**Goal**|Help users understand the differences of similar terms in other standards|
-|**Description**|Some terms are used differently between different standards or use different names for the same thing. The documentation shall provide a way to recognize those cases.|
+|**ID**|REQ-USE-SCHEMA-DOCUMENTATION-TERMINOLOGY-DIFFERENCES|
+|**Description**|Some terms are used differently between different standards or use different names for the same thing. The documentation shall provide a way to recognize those cases, to help users understand the differences of similar terms|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Use terminology from thesauri or SKOS to express "similarTerms", "similarButDifferent" and "notToBeConfusedWith" relations.|
+|**Priority**|medium|
 
 #### 21) 📜Schema documentation shall be understandable for users that need to fill or read metadata
 
@@ -243,12 +257,12 @@ This shall include different user perspectives including but not limited to data
 
 |||
 |---|---|
-|**ID**|REQ-CURATED-CONTROLLED-VOCABS|
-|**Goal**|The predifined vocabularies are sometimes not enough - by introducing a mechanism to extend them in a curated way it prevents frustrations for users|
-|**Description**|Free text can sometimes describe better what a certain artefact / dataset is about if there are no matching values in a controlled vocabulary. So it would be nice if there would be a simple process to add new items to a controlled vocabulary in a curated way, that does not hinder the workflow of the user|
+|**ID**|REQ-USE-SCHEMA-CURATED-CONTROLLED-VOCABS|
+|**Description**|Strict controlled vocabularies can cause frustration for users, if they are unable to correctly express the meta information that would be best suited. Free text can sometimes describe better what a certain artifact / dataset is about, if there are no matching values in the controlled vocabulary. However, free text causes interoperability issues, so it is necessary to provide a process that allows to add new items to a controlled vocabulary in a curated way, that does not hinder the workflow of the user|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Embedding a terminology search into a metadata input form when there can be no proper choice made to find a reference in an ontology for a term. If the term from the other ontology fulfills yet to be determined characteristics it might be possible to extend the vocabulary with that term (initially for the time the form is active) and on a long run the added "external" terms could be curated and either accepted or revoked centrally for the schema.|
+|**Priority**|Medium|
 
 
 ### Metadata Record
@@ -300,12 +314,12 @@ This shall include different user perspectives including but not limited to data
 
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-INTEGRATION|
-|**Goal**|Make it easy for tool developers to integrate with our schema, even if it has been using a different metadata schema before|
-|**Description**|We need to provide a service that allows metadata record conversion from one schema to another|
+|**ID**|REQ-USE-TOOLING-CONVERSION-SERVICE|
+|**Description**|Provide a tool that supports metadata record conversion from one schema to another, enabling easy integration for tool developers, even if their existing tools are built around a different metadata schema. This tool should facilitate interoperability across multiple schemas, reducing the burden on developers to manually map terms or fields.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
-|**Solution idea**|Some existing ontoloy matching tools can be used for metadata schema matching which then form the foundation for automated metadata record conversion.|
+|**Linked terms**|https://schema.org/Thing, https://schema.org/convertTo, https://schema.org/targetFormat, http://purl.org/dc/terms/conformsTo, http://purl.org/dc/terms/format, http://purl.org/dc/terms/relation, https://www.w3.org/TR/prov-o/#wasDerivedFrom, https://www.w3.org/TR/prov-o/#hadPrimarySource, https://www.w3.org/ns/dcat#mediaType, https://www.w3.org/TR/vocab-dcat-2/#Class, http://edamontology.org/format_1915, http://edamontology.org/operation_0335, http://www.w3.org/2004/02/skos/core#exactMatch, http://www.w3.org/2004/02/skos/core#closeMatch|
+|**Solution idea**|Consider using existing ontology matching tools to perform schema mapping, which can be used as foundation to automate much of the metadata record conversion process.|
+|**Priority**|Medium|
 
 
 ## Review
@@ -314,23 +328,22 @@ This shall include different user perspectives including but not limited to data
 #### 26) 📜Documentation shall clearly show the terms used from other ontologies / schemas
 |||
 |---|---|
-|**Title**||
-|**ID**|REQ-DOCUMENTATION-CLEAR-REFERENCES|
-|**Goal**|Express the amount of terminology reuse to express high level of interoperability|
-|**Description**|The terms used to express things shall provide a reference to the original documentation and formal specification|
+|**ID**|REQ-REVIEW-SCHEMA-DOCUMENTATION-CLEAR-REFERENCES|
+|**Description**|Documentation should reference terms from other ontologies and schemas to maximize interoperability, providing clear links to the original sources and formal specifications. This approach ensures consistent terminology and enables seamless integration with external systems, enhancing the metadata’s usability across diverse platforms. It also increases the awareness of users about the origins of each metadata field.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
-|**Solution idea**|Markdown and HTML both support named links to external sources|
+|**Linked terms**|https://schema.org/about, https://schema.org/itemReviewed, https://schema.org/reviewAspect, https://schema.org/author, https://schema.org/reviewBody, https://schema.org/mentions, https://schema.org/citation|
+|**Solution idea**|Use Markdown and HTML to incorporate named links to external sources. Schema terms can be embedded as metadata tags or structured annotations where applicable.|
+|**Priority**|High|
 
 #### 27) 📜Metadata schema / standard needs to have a clear versioning scheme
 |||
 |---|---|
-|**ID**|REQ-SCHEMA-VERSIONING|
-|**Goal**|Versioning allows to clearly identify the correct schema for each dataset|
-|**Description**|Clearly distinguish newer versions from the old ones and make sure that all versions are available online|
+|**ID**|REQ-REVIEW-SCHEMA-VERSIONING|
+|**Description**|Implement a clear versioning scheme to ensure that each dataset is accurately linked to the correct schema version. This enables consistency, traceability, and compatibility across systems. The versioning system should include identifiers for major, minor, and patch updates. Each version should also link to release notes and modification dates where applicable. The current and all older versions must be accessible via a GUPRI.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
-|**Solution idea**|Semantic versioning for the schema and reference the versioned URL of the schema in each metadata record|
+|**Linked terms**|https://schema.org/version, https://schema.org/releaseNotes, https://schema.org/dateModified|
+|**Solution idea**|Use semantic versioning (e.g., MAJOR.MINOR.PATCH) and reference the used version in the metadata schema, so each record can be clearly referenced to the used version.|
+|**Priority**|High|
 
 ### Metadata Record
 
@@ -351,38 +364,30 @@ This shall include different user perspectives including but not limited to data
 #### 29) 🔧Version control shall be applied for documentation
 |||
 |---|---|
-|**ID**|REQ-DOCUMENTATION-VERSION-CONTROL|
-|**Goal**|Make changes to documentation traceable|
-|**Description**|Version control needs to be applied to improve documentation quality and prevent losses through editing from different people|
+|**ID**|REQ-REVIEW-TOOLING-DOCUMENTATION-VERSION-CONTROL|
+|**Description**|Apply version control to the metadata schema documentation. This will improve documentation quality, make changes to documentation traceable, and prevent losses when edits are made by multiple people.|
 |**Creation date**|2024-09-19|
-|**Linked terms**||
-|**Solution idea**|Github is a good foundation for the documentation source files and can also host the actual online documentation|
-
+|**Linked terms**|https://schema.org/version, https://schema.org/UpdateAction|
+|**Solution idea**|GitHub is a good foundation for the documentation source files and can also host the actual online documentation|
+|**Priority**|medium|
 
 #### 30) 🔧 Metadata Versioning Tools
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-VERSIONING|
-|**Goal**|Implement version control for metadata schema.|
-|**Description**|A new version shall come with a migration script to convert existing entries to a newer version of the schema.|
+|**ID**|REQ-REVIEW-TOOLING-VERSIONING|
+|**Description**|Apply version control to the metadata schema. This will improve schema quality, make changes to the schema traceable, and prevent losses when edits are made by multiple people. New versions shall come with migration scripts to convert existing entries to the new version of the schema.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
-|**Solution idea**|The metadata schema can be versioned using git tags, in this way, the persistent URLs of the metadata schema files will contain the respective version number. Each new release of the schema must be checked with analysis tools to avoid design flaws and other smells.|
-
+|**Linked terms**|https://schema.org/version, https://schema.org/schemaVersion, https://schema.org/UpdateAction|
+|**Solution idea**|The metadata schema can be versioned using git tags, in this way, the persistent URLs of the metadata schema files will contain the respective version number. Each new release of the schema must be checked with analysis tools to avoid design flaws.|
+|**Priority**|high|
 
 
 #### 31) 🔧 Metadata Validation Tools
 |||
 |---|---|
-|**ID**|REQ-METADATA-TOOLING-VALIDATION|
-|**Goal**|Make sure that metadata schema is accurate, complete, and compliant with predefined standards.|
-|**Description**|Metadata schema validation tools ensure that data registries can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
+|**ID**|REQ-REVIEW-TOOLING-VALIDATION|
+|**Description**|Ensure that the metadata schema is accurate, complete, and compliant with predefined standards. This can be done, for example, through metadata schema validation tools which check that data registries can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
 |**Creation date**|2024-09-23|
 |**Linked terms**||
 |**Solution idea**|OBO-Foundry, OOPS!, ...|
-
-
-
-
-
-
+|**Priority**|medium|
