@@ -9,7 +9,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-DESIGN-SCHEMA-LINKED-METADATA|
-|**Description**|Help users to traverse semantically linked metadata records that are similiar, different, related, etc. This can involve data from the same or different project, a similar purpose or an explicitly specified difference. This can be achieved using an explicit field for links in the metadata schema|
+|**Description**|Help users to traverse semantically linked metadata records that are similar, different, related, etc. This can involve data from the same or different project, a similar purpose or an explicitly specified difference. This can be achieved using an explicit field for links in the metadata schema|
 |**Creation date**|2024-08-15|
 |**Linked terms**||
 |**Solution idea**|Provide a generic metadata module in the schema that focuses on relations to other datasets and think about a good collection of relations between them.|
@@ -140,7 +140,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-IMPL-RECORD-METADATA-SUBMODULE-STORAGE-STRUCTURE|
 |**Description**|Submodules will need to reference each other and a flat way of storage is superior if multiple submodules might reference the same submodule|
 |**Creation date**|2024-10-22|
-|**Linked terms**|https://schema.org/DefinedTermSet (A submodule is a Defined Term Set that contains metadata fields relevant to the topic of the submodule.) https://schema.org/inDefinedTermSet (could use this to note if a term belongs to more than one submodule) https://schema.org/citation (could use this property of a Defined Term Set to track other sets that it references)|
+|**Linked terms**|https://schema.org/DefinedTermSet (A submodule is a Defined Term Set that contains metadata fields relevant to the topic of the submodule), https://schema.org/inDefinedTermSet (could use this to note if a term belongs to more than one submodule), https://schema.org/citation (could use this property of a Defined Term Set to track other sets that it references)|
 |**Solution idea**|Use JSON $ref in JSON and the respective URIs in RDF based file formats|
 |**Priority**|high|
 
