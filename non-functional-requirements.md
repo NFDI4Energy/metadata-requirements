@@ -11,7 +11,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-LINKED-METADATA|
 |**Description**|Help users to traverse semantically linked metadata records that are similar, different, related, etc. This can involve data from the same or different project, a similar purpose or an explicitly specified difference. This can be achieved using an explicit field for links in the metadata schema|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://purl.org/dc/elements/1.1/relation, http://purl.org/dc/terms/isReferencedBy, http://purl.org/dc/terms/isRequiredBy, http://purl.org/dc/terms/references, http://purl.org/dc/terms/requires, https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/relatedidentifier/, https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/relateditem/, DCAT also uses DC terms|
 |**Solution idea**|Provide a generic metadata module in the schema that focuses on relations to other datasets and think about a good collection of relations between them.|
 |**Priority**|Low|
 
@@ -21,7 +21,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-REUSE-AGREED-SEMANTICS|
 |**Description**|It is vital to not create duplicate definitions to improve interoperability. This should be done using pre-existing ontologies wherever possible|
 |**Creation date**|2024-09-17|
-|**Linked terms**||
+|**Linked terms**|https://schema.org/sameAs, http://www.w3.org/2004/02/skos/core#related, http://www.w3.org/2004/02/skos/core#exactMatch (and other match types)|
 |**Solution idea**|Importing / Referencing of all ontologies that provide useful terms or semantics|
 |**Priority**|High|
 
@@ -31,7 +31,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-CONTROLLED-VOCABULARIES|
 |**Description**|Prevent the interoperability issues that arise with custom human input, by using controlled vocabularies for user input where possible|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|https://json-schema.org/draft/2020-12/json-schema-validation#name-pattern, http://www.w3.org/ns/shacl#class, http://www.w3.org/ns/shacl#nodeKind, http://www.w3.org/ns/shacl#sparql|
 |**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary. Consider using Terminology services or special term lookup services like the DBpedia Lookup|
 |**Priority**|High|
 
@@ -42,7 +42,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-FIELD-IMPORTANCE|
 |**Description**|To allow users to quickly grasp which metadata fields are more important we need to cluster them into mandatory, optional, etc. |
 |**Creation date**|2024-10-22|
-|**Linked terms**||
+|**Linked terms**|https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/overview/#levels-of-obligation, https://www.dcat-ap.de/def/dcatde/3.0/spec/#verbindlichkeitsstufen|
 |**Solution idea**|Additional attribute for all metadata fields (compare OEM Badges)|
 |**Priority**|Medium|
 
@@ -55,7 +55,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-MODULARITY|
 |**Description**|To ensure a good quality of metadata for a given entity it is important to have specifically tailored sets of metadata fields. It makes sense to group several fields together if they always appear in a common context. Each of these modules needs to have a precise and limited scope. Smaller is often better in this context.|
 |**Creation date**|2024-10-22|
-|**Linked terms**||
+|**Linked terms**|http://www.w3.org/2004/02/skos/core#ConceptScheme,http://www.w3.org/2004/02/skos/core#inScheme|
 |**Solution idea**|Cluster metadata fields in modules and allow one entity to be annotated by a set of these modules. A strategy to find the correct modules needs to be worked out|
 |**Priority**|High|
 
@@ -67,7 +67,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-SCHEMA-LANGUAGE|
 |**Description**|Since key value maps only see a key equal if it matches 100% it is necessary to have all keys in a common language. We propose to use only English names for the keys. If a serialization format allows multiple languages also other languages can be supported, but English must have the highest priority|
 |**Creation date**|2024-10-22|
-|**Linked terms**||
+|**Linked terms**|http://purl.org/dc/elements/1.1/language, https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/language/, Note that these links are focusing on a language of a resource while this requirement focuses more on the design of the metadata schema|
 |**Solution idea**|Just use English keys for the fields and perform translations only with annotation properties|
 |**Priority**|High|
 
@@ -79,7 +79,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-TOOLING-STATE-OF-THE-ART|
 |**Description**|The Metadata schema shall be created and maintained using state-of-the-art tools of the semantic web domain|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|https://protege.stanford.edu/, https://github.com|
 |**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
 |**Priority**|High|
 
@@ -90,7 +90,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-DESIGN-TOOLING-IMPROVEMENT|
 |**Description**|To enhance the interoperability of the metadata schema with other metadata schemas and improve the overall quality of metadata, it is important to try to reuse existing terms. Finding these can be aided with the use of terminology search and cross-walks between metadata standards. The used design tools shall assist the developer in applying these mechanisms.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|It seems existing plugins are too old to work|
 |**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards. Otherwise a plugin might be configurable against a DBPedia Lookup that was initialized with common metadata standards.|
 |**Priority**|Medium|
 
@@ -106,7 +106,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-IMPL-SCHEMA-PROVIDED-FILES|
 |**Description**|A formalized specification of the schema is necessary. The preferred format is in a semantic format like Turtle/Notation3. Additionally the schema files shall be provided as JSON schema (both plain JSON and JSON-ld) as a convenience for external use cases. Only the semantic format can be considered the root schema and the others most be updated on every change respectively. These types of formats are prioritized because of their validation and form generation capabilities|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|N/A|
 |**Solution idea**|JSON-Schema files can be generated from an OWL/SHACL specification of the root schema|
 |**Priority**|High|
 
@@ -147,14 +147,14 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 
 ### Tooling
 
-#### 13) 🔧 Metadata record Implementation Tools
+#### 13) 🔧 Metadata record creation service
 
 |||
 |---|---|
 |**ID**|REQ-IMPL-TOOLING-RECORD-CREATION-SERVICE|
 |**Description**|To ensure that the creation of metadata records can be done easily from different application contexts a service solution for the creation can be beneficial. So this service could be embedded via an application plugin. Such a service can therefore support multiple programming languages.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|N/A|
 |**Solution idea**|Metadata record creation and editing as a web service.|
 |**Priority**|Medium|
 
@@ -167,17 +167,17 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-INTEGRATION-SCHEMA-STANDARD-INTEROPERABILITY|
 |**Description**|Metadata records for our schema should be easily interoperable with other platforms that use different schemas, as it prevents re-annotation of metadata in other formats and supports data access to and from other platforms|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|https://www.getty.edu/publications/categories-description-works-art/metadata-standards-crosswalk/, https://www.ukoln.ac.uk/metadata/interoperability/, http://www.w3.org/2004/02/skos/core#, http://ns.inria.org/edoal/1.0/, https://faircore4eosc.eu/eosc-core-components/metadata-schema-and-crosswalk-registry-mscr|
 |**Solution idea**|Schema crosswalks to the most relevant standards are helpful for federated searches and form a foundation of format conversions. Scripts shall be provided to convert from and to our schema for a selected set of standards. Evaluate formalized (semantic) formats for crosswalks and recommend one that can be integrated into existing knowledge graphs / ontologies.|
 |**Priority**|Medium|
 
-#### 15) 📜Requirements for applications using the metadata schema
+#### 15) 📜Guidelines for applications using the metadata schema
 |||
 |---|---|
 |**ID**|REQ-INTEGRATION-SCHEMA-APPLICATION-GUIDELINES|
-|**Description**|Allow developers to get going with the schema quickly with a clear set of requirements on how to integrate and work with the metadata schema and records. All applications that want to work with the standard are obliged to follow these guidelines.|
+|**Description**|Allow developers to get going with the schema quickly with a clear set of requirements or guidelines on how to integrate and work with the metadata schema and records. All applications that want to work with the standard are obliged to follow these guidelines.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|N/A|
 |**Solution idea**|Extrapolate a subset of the requirements on this page and format them on some kind of online documentation.|
 |**Priority**|Low|
 
