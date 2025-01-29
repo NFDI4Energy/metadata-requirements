@@ -190,7 +190,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-INTEGRATION-TOOLING-METADATA-FLEXIBILITY-FOR-APPLICATIONS|
 |**Description**|A unified metadata schema used by the tools shall provide capabilities that allows each tool to customize the schema in certain limits to be best suited for the given use case of the tool. For example tools should be able to define explicit rules for what metadata fields are necessary and which are optional. Also the use of certain domain-specific metadata schemas/modules should be controllable, ensuring that relevant metadata is captured.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|https://w3id.org/squap/SoftwareQuality/FlexibilityInUse, https://w3id.org/dco#FlexibilityService|
 |**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state. This could work best with a service that produces metadata forms that can be configured via the parameters to the endpoint|
 |**Priority**|Medium|
 
@@ -201,7 +201,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-INTEGRATION-TOOLING-STANDARD-EXPORTS|
 |**Description**|To boost compatibility and interoperability it is necessary to provide exports in a selection of well established metadata standards|
 |**Creation date**|2024-10-22|
-|**Linked terms**||
+|**Linked terms**|https://w3id.org/squap/SoftwareQuality/Compatibility, https://w3id.org/squap/SoftwareQuality/Interoperability|
 |**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, Datacite, ...|
 |**Priority**|Medium|
 
@@ -216,7 +216,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-DOCUMENTATION|
 |**Description**|Each metadata module / profile, and each individual metadata field shall have a definition and description text that is available online.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|https://w3id.org/arco/ontology/context-description/Documentation, http://dev.poderopedia.com/vocab/Documentation, https://w3id.org/loin#Documentation, https://w3id.org/semsys/ns/swemls#hasDocumentation, https://w3id.org/vair#TechnicalDocumentation, http://meta.icos-cp.eu/ontologies/cpmeta/hasDocumentationUri|
 |**Solution idea**|Generated documentation on GitHub pages|
 |**Priority**|high|
 
@@ -227,7 +227,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-USAGE-GUIDE|
 |**Description**|The metadata schema needs to be accompanied by an online documentation or guide on how to use it properly. This shall include different user perspectives including but not limited to data owners, application developers and data registry maintainers. Also, it needs to motivate why the usage of metadata and respective standards is important.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://www.w3.org/ns/lemon/ontolex#usage, http://rdvocab.info/RDARelationshipsWEMI/guide, http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Usage, http://purl.org/olia/ubyCat.owl#usage|
 |**Solution idea**|Additional Markdown based documentation that can accompany the generated GitHub pages.|
 |**Priority**|medium|
 
@@ -237,7 +237,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-DOCUMENTATION-TERMINOLOGY-DIFFERENCES|
 |**Description**|Some terms are used differently between different standards or use different names for the same thing. The documentation shall provide a way to recognize those cases, to help users understand the differences of similar terms|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://open.vocab.org/terms/similarTo, http://vocab.deri.ie/cogs#TerminologicalMapping, http://www.w3.org/ns/lemon/vartrans#TerminologicalRelation|
 |**Solution idea**|Use terminology from thesauri or SKOS to express "similarTerms", "similarButDifferent" and "notToBeConfusedWith" relations.|
 |**Priority**|medium|
 
@@ -248,7 +248,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-DOCUMENTATION-STAKEHOLDER-USERS|
 |**Description**|The schema documentation must provide helpful information to users without semantics or metadata background, so it should not just be focused around developers|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://dev.poderopedia.com/vocab/hasOtherDocumentation, https://w3id.org/arco/ontology/context-description/DocumentationType (not sure)|
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 |**Priority**|Medium|
 
@@ -259,7 +259,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-CURATED-CONTROLLED-VOCABS|
 |**Description**|Strict controlled vocabularies can cause frustration for users, if they are unable to correctly express the meta information that would be best suited. Free text can sometimes describe better what a certain artifact / dataset is about, if there are no matching values in the controlled vocabulary. However, free text causes interoperability issues, so it is necessary to provide a process that allows to add new items to a controlled vocabulary in a curated way, that does not hinder the workflow of the user|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|https://w3id.org/BCI-ontology#extends, (not sure)|
 |**Solution idea**|Embedding a terminology search into a metadata input form when there can be no proper choice made to find a reference in an ontology for a term. If the term from the other ontology fulfills yet to be determined characteristics it might be possible to extend the vocabulary with that term (initially for the time the form is active) and on a long run the added "external" terms could be curated and either accepted or revoked centrally for the schema.|
 |**Priority**|Medium|
 
@@ -272,7 +272,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-RECORD-SIMPLE-UI|
 |**Description**|Don't annoy or scare users with complex forms or workflows as this will prevent them from entering data alltogether. Simple and streamlined processes and UIs are key.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|https://w3id.org/mod#browsingUI, http://www.w3.org/ns/ui#style|
 |**Solution idea**|Provide either a wizard/survey like form with multiple small pages or a dialog with a chatbot rather than a form and use modern web frameworks to build the UI.|
 |**Priority**|High|
 
@@ -282,7 +282,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-RECORD-SIMPLIFY-LINKING|
 |**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow to link between metadata records easily. Users are not likely to manually look up relations themselves. As a result any user interface should assist the user in finding appropriate potentially related metadata records automatically.|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://purl.obolibrary.org/obo/OBI_0000800|
 |**Solution idea**|Search for strategies how to identify metadata records with a certain degree of similarties, such that a service can propose them to be added as a related metadata record. (Use the OEP scenario comparision as a foundation)|
 |**Priority**|Low|
 
@@ -292,7 +292,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-RECORD-LANGUAGES|
 |**Description**|Ontologies do support annotation in multiple languages so any user interface shall be allowed to present metadata in any given language as long as the formal serialization is again in the standard language. Controlled vocabularies might also provide translations for a given item.|
 |**Creation date**|2024-11-07|
-|**Linked terms**||
+|**Linked terms**|http://purl.org/linguistics/gold/Language, http://purl.org/dc/terms/language, http://schema.org/Language|
 |**Solution idea**|User interface code can use the respective language annotations for labels when displaying both fieldnames and selected (controlled) values|
 |**Priority**|Low|
 
@@ -353,7 +353,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-REVIEW-RECORD-FORMAT-VALIDATION|
 |**Description**|Validation of metadata records improves the quality of metadata. Therefore used record serializations must allow for standardized validation mechanisms. Validation needs to be done in two stages (client and server) to first improve UX and second guarantee record conformance|
 |**Creation date**|2024-08-15|
-|**Linked terms**||
+|**Linked terms**|http://vocab.deri.ie/cogs#Validation, http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Format, http://simile.mit.edu/2003/10/ontologies/vraCore3#measurementsFormat, http://open.vocab.org/terms/json|
 |**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied. Web user interfaces often support client side validation this should be applied whenever possible.|
 |**Priority**|High|
 
@@ -387,6 +387,6 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-REVIEW-TOOLING-VALIDATION|
 |**Description**|Ensure that the metadata schema is accurate, complete, and compliant with predefined standards. This can be done, for example, through metadata schema validation tools which check that data registries can display and compare metadata, standardize mandatory fields for meaningful comparisons, and balance user experience with data comparability.|
 |**Creation date**|2024-09-23|
-|**Linked terms**||
+|**Linked terms**|http://vocab.deri.ie/cogs#Validation, https://w3id.org/vair#Validation, http://data.businessgraph.io/ontology#validationRule|
 |**Solution idea**|OBO-Foundry, OOPS!, ...|
 |**Priority**|medium|
