@@ -32,7 +32,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|Prevent the interoperability issues that arise with custom human input, by using controlled vocabularies for user input where possible|
 |**Creation date**|2024-08-15|
 |**Linked terms**|https://json-schema.org/draft/2020-12/json-schema-validation#name-pattern, http://www.w3.org/ns/shacl#class, http://www.w3.org/ns/shacl#nodeKind, http://www.w3.org/ns/shacl#sparql|
-|**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, doi, orcid, etc.) - multiple solutions will be necessary. Consider using Terminology services or special term lookup services like the DBpedia Lookup|
+|**Solution idea**|Use either ENUM like instances of a type in OWL or specify a base class for terms as child classes, use public identifiers of a certain pattern (e.g. purl, DOI, orcid, etc.) - multiple solutions will be necessary. Consider using Terminology services or special term lookup services like the DBpedia Lookup|
 |**Priority**|High|
 
 #### 4) 📜Fields need to be categorized by importance
@@ -40,7 +40,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-DESIGN-SCHEMA-FIELD-IMPORTANCE|
-|**Description**|To allow users to quickly grasp which metadata fields are more important we need to cluster them into mandatory, optional, etc. |
+|**Description**|To allow users to quickly grasp which metadata fields are more important we need to cluster them into mandatory, optional, etc.|
 |**Creation date**|2024-10-22|
 |**Linked terms**|https://datacite-metadata-schema.readthedocs.io/en/4.6/properties/overview/#levels-of-obligation, https://www.dcat-ap.de/def/dcatde/3.0/spec/#verbindlichkeitsstufen|
 |**Solution idea**|Additional attribute for all metadata fields (compare OEM Badges)|
@@ -80,7 +80,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|The Metadata schema shall be created and maintained using state-of-the-art tools of the semantic web domain|
 |**Creation date**|2024-09-23|
 |**Linked terms**|https://protege.stanford.edu/, https://github.com|
-|**Solution idea**|The core metadata schema shall be edited in Protege. The metadata schema shall be stored on github in a dedicated repository in the NFDI4Energy organization.|
+|**Solution idea**|The core metadata schema shall be edited in Protégé. The metadata schema shall be stored on GitHub in a dedicated repository in the NFDI4Energy organization.|
 |**Priority**|High|
 
 #### 7) 🔧 Metadata Schema Improvement Tools
@@ -91,7 +91,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|To enhance the interoperability of the metadata schema with other metadata schemas and improve the overall quality of metadata, it is important to try to reuse existing terms. Finding these can be aided with the use of terminology search and cross-walks between metadata standards. The used design tools shall assist the developer in applying these mechanisms.|
 |**Creation date**|2024-09-23|
 |**Linked terms**|It seems existing plugins are too old to work|
-|**Solution idea**|Protege can be used to edit the metadata schema. Protege could have useful plugins for terminology search from important other metadata standards. Otherwise a plugin might be configurable against a DBPedia Lookup that was initialized with common metadata standards.|
+|**Solution idea**|Protégé can be used to edit the metadata schema. Protégé could have useful plugins for terminology search from important other metadata standards. Otherwise, a plugin might be configurable against a DBPedia Lookup or the NFDI terminology service that was initialized with common metadata standards.|
 |**Priority**|Medium|
 
 
@@ -104,7 +104,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-IMPL-SCHEMA-PROVIDED-FILES|
-|**Description**|A formalized specification of the schema is necessary. The preferred format is in a semantic format like Turtle/Notation3. Additionally the schema files shall be provided as JSON schema (both plain JSON and JSON-ld) as a convenience for external use cases. Only the semantic format can be considered the root schema and the others most be updated on every change respectively. These types of formats are prioritized because of their validation and form generation capabilities|
+|**Description**|A formalized specification of the schema is necessary. The preferred format is in a semantic format like Turtle/Notation3. Additionally, the schema files shall be provided as JSON schema (both plain JSON and JSON-LD) as a convenience for external use cases. Only the semantic format can be considered the root schema and the others most be updated on every change respectively. These types of formats are prioritized because of their validation and form generation capabilities|
 |**Creation date**|2024-09-23|
 |**Linked terms**|N/A|
 |**Solution idea**|JSON-Schema files can be generated from an OWL/SHACL specification of the root schema|
@@ -117,10 +117,10 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-IMPL-RECORD-STORAGE-FEDERATION|
-|**Description**|Metadata shall be easily queriable among federated SPARQL endpoints, to improve findability. Queries should function with either native or virtual endpoints.|
+|**Description**|Metadata shall be queried easily among federated SPARQL endpoints, to improve findability. Queries should function with either native or virtual endpoints.|
 |**Creation date**|2024-09-19|
 |**Linked terms**|https://schema.org/SearchAction, https://schema.org/EntryPoint, https://schema.org/query, https://schema.org/includedInDataCatalog, http://edamontology.org/data_2080, http://edamontology.org/format_3748, http://edamontology.org/format_2195|
-|**Solution idea**|Triplestore databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
+|**Solution idea**|Triple store databases easily provide SPARQL endpoints and therefore federation capabilities. Alternatively metadata can be stored in a way that allows for virtual SPARQL endpoints to achieve the same effect.|
 |**Priority**|high|
 
 #### 10) 📝Metadata serialization formats need to be standardized
@@ -175,10 +175,22 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-INTEGRATION-SCHEMA-APPLICATION-GUIDELINES|
-|**Description**|Allow developers to get going with the schema quickly with a clear set of requirements or guidelines on how to integrate and work with the metadata schema and records. All applications that want to work with the standard are obliged to follow these guidelines.|
+|**Description**|Allow developers to get going with the schema quickly with a clear set of requirements or guidelines on how to integrate and work with the metadata schema. All applications that want to work with the standard are obliged to follow these guidelines.|
 |**Creation date**|2024-08-15|
 |**Linked terms**|N/A|
 |**Solution idea**|Extrapolate a subset of the requirements on this page and format them on some kind of online documentation.|
+|**Priority**|Low|
+
+
+### Metadata Record
+#### XX) 📝 Guidelines for applications using or creating metadata records
+|||
+|---|---|
+|**ID**|REQ-INTEGRATION-RECORD-APPLICATION-GUIDELINES|
+|**Description**|Allow developers to get going with the integration of metadata in their applications quickly, with a clear set of requirements or guidelines on how to integrate and work with metadata records. All applications that want to work with the standard are obliged to follow these guidelines.|
+|**Creation date**|2025-01-31|
+|**Linked terms**|N/A|
+|**Solution idea**|Extrapolate a subset of the requirements on this page and format them on some kind of online documentation. This can further include the use of certain services or libraries for form generation etc.|
 |**Priority**|Low|
 
 
@@ -188,7 +200,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-INTEGRATION-TOOLING-METADATA-FLEXIBILITY-FOR-APPLICATIONS|
-|**Description**|A unified metadata schema used by the tools shall provide capabilities that allows each tool to customize the schema in certain limits to be best suited for the given use case of the tool. For example tools should be able to define explicit rules for what metadata fields are necessary and which are optional. Also the use of certain domain-specific metadata schemas/modules should be controllable, ensuring that relevant metadata is captured.|
+|**Description**|A unified metadata schema used by the tools shall provide capabilities that allow each tool to customize the schema within certain limits to be best suited for the given use case of the tool. For example tools should be able to define explicit rules for what metadata fields are necessary and which are optional. Also, the use of certain domain-specific metadata schemas/modules should be controllable, ensuring that relevant metadata is captured.|
 |**Creation date**|2024-09-23|
 |**Linked terms**|https://w3id.org/squap/SoftwareQuality/FlexibilityInUse, https://w3id.org/dco#FlexibilityService|
 |**Solution idea**|The input forms for metadata should be somehow generated. This might require inputs from the developer on what metadata modules are relevant and if certain fields should have a non-standard mandatory state. This could work best with a service that produces metadata forms that can be configured via the parameters to the endpoint|
@@ -202,7 +214,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**Description**|To boost compatibility and interoperability it is necessary to provide exports in a selection of well established metadata standards|
 |**Creation date**|2024-10-22|
 |**Linked terms**|https://w3id.org/squap/SoftwareQuality/Compatibility, https://w3id.org/squap/SoftwareQuality/Interoperability|
-|**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, Datacite, ...|
+|**Solution idea**|Use formalized crosswalks to perform a conversion to classic standards like DCT, DataCite, ...|
 |**Priority**|Medium|
 
 
@@ -248,7 +260,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-DOCUMENTATION-STAKEHOLDER-USERS|
 |**Description**|The schema documentation must provide helpful information to users without semantics or metadata background, so it should not just be focused around developers|
 |**Creation date**|2024-08-15|
-|**Linked terms**|http://dev.poderopedia.com/vocab/hasOtherDocumentation, https://w3id.org/arco/ontology/context-description/DocumentationType (not sure)|
+|**Linked terms**|http://dev.poderopedia.com/vocab/hasOtherDocumentation, https://w3id.org/arco/ontology/context-description/DocumentationType|
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 |**Priority**|Medium|
 
@@ -259,7 +271,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-SCHEMA-CURATED-CONTROLLED-VOCABS|
 |**Description**|Strict controlled vocabularies can cause frustration for users, if they are unable to correctly express the meta information that would be best suited. Free text can sometimes describe better what a certain artifact / dataset is about, if there are no matching values in the controlled vocabulary. However, free text causes interoperability issues, so it is necessary to provide a process that allows to add new items to a controlled vocabulary in a curated way, that does not hinder the workflow of the user|
 |**Creation date**|2024-08-15|
-|**Linked terms**|https://w3id.org/BCI-ontology#extends, (not sure)|
+|**Linked terms**|https://www.w3.org/TR/shacl/#InConstraintComponent|
 |**Solution idea**|Embedding a terminology search into a metadata input form when there can be no proper choice made to find a reference in an ontology for a term. If the term from the other ontology fulfills yet to be determined characteristics it might be possible to extend the vocabulary with that term (initially for the time the form is active) and on a long run the added "external" terms could be curated and either accepted or revoked centrally for the schema.|
 |**Priority**|Medium|
 
@@ -270,7 +282,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-USE-RECORD-SIMPLE-UI|
-|**Description**|Don't annoy or scare users with complex forms or workflows as this will prevent them from entering data alltogether. Simple and streamlined processes and UIs are key.|
+|**Description**|Don't annoy or scare users with complex forms or workflows as this will prevent them from entering data altogether. Simple and streamlined processes and UIs are key.|
 |**Creation date**|2024-08-15|
 |**Linked terms**|https://w3id.org/mod#browsingUI, http://www.w3.org/ns/ui#style|
 |**Solution idea**|Provide either a wizard/survey like form with multiple small pages or a dialog with a chatbot rather than a form and use modern web frameworks to build the UI.|
@@ -280,20 +292,20 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-USE-RECORD-SIMPLIFY-LINKING|
-|**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow to link between metadata records easily. Users are not likely to manually look up relations themselves. As a result any user interface should assist the user in finding appropriate potentially related metadata records automatically.|
+|**Description**|For easier navigation and understanding relations between multiple (data) artifacts - it is necessary to allow linking between metadata records easily. Users are not likely to manually look up relations themselves. As a result any user interface should assist the user in finding appropriate potentially related metadata records automatically.|
 |**Creation date**|2024-08-15|
 |**Linked terms**|http://purl.obolibrary.org/obo/OBI_0000800|
-|**Solution idea**|Search for strategies how to identify metadata records with a certain degree of similarties, such that a service can propose them to be added as a related metadata record. (Use the OEP scenario comparision as a foundation)|
+|**Solution idea**|Search for strategies how to identify metadata records with a certain degree of similarities, such that a service can propose them to be added as a related metadata record. (Use the OEP scenario comparison as a foundation)|
 |**Priority**|Low|
 
 #### XX) 📝Metadata record value languages
 |||
 |---|---|
 |**ID**|REQ-USE-RECORD-LANGUAGES|
-|**Description**|Ontologies do support annotation in multiple languages so any user interface shall be allowed to present metadata in any given language as long as the formal serialization is again in the standard language. Controlled vocabularies might also provide translations for a given item.|
+|**Description**|Ontologies do support annotation in multiple languages, so any user interface shall be allowed to present metadata in any given language as long as the formal serialization is again in the standard language. Controlled vocabularies might also provide translations for a given item.|
 |**Creation date**|2024-11-07|
 |**Linked terms**|http://purl.org/linguistics/gold/Language, http://purl.org/dc/terms/language, http://schema.org/Language|
-|**Solution idea**|User interface code can use the respective language annotations for labels when displaying both fieldnames and selected (controlled) values|
+|**Solution idea**|User interface code can use the respective language annotations for labels when displaying both field names and selected (controlled) values|
 |**Priority**|Low|
 
 #### XX) 📝Metadata usage documentation shall be understandable for users that need to fill or read metadata
@@ -303,7 +315,7 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |**ID**|REQ-USE-RECORD-DOCUMENTATION-STAKEHOLDER-USERS|
 |**Description**|The workflow documentation must provide helpful information to users without data management background and shall allow everybody to get started with metadata annotation.|
 |**Creation date**|2024-11-07|
-|**Linked terms**||
+|**Linked terms**|N/A|
 |**Solution idea**|This is hard to measure, so for now just involve end users in the design of the documentation.|
 |**Priority**|Medium|
 
@@ -351,10 +363,10 @@ Metadata can come in numerous flavors and therefore should allow to be used in m
 |||
 |---|---|
 |**ID**|REQ-REVIEW-RECORD-FORMAT-VALIDATION|
-|**Description**|Validation of metadata records improves the quality of metadata. Therefore used record serializations must allow for standardized validation mechanisms. Validation needs to be done in two stages (client and server) to first improve UX and second guarantee record conformance|
+|**Description**|Validation of metadata records improves the quality of metadata. Therefore, the used record serializations must allow for standardized validation mechanisms. Validation needs to be done in two stages (client and server) to first improve UX and second guarantee record conformance|
 |**Creation date**|2024-08-15|
 |**Linked terms**|http://vocab.deri.ie/cogs#Validation, http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Format, http://simile.mit.edu/2003/10/ontologies/vraCore3#measurementsFormat, http://open.vocab.org/terms/json|
-|**Solution idea**|JSON schema and JSONld can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied. Web user interfaces often support client side validation this should be applied whenever possible.|
+|**Solution idea**|JSON schema and JSON-LD can be used in conjunction to validate input metadata records. If using other semantic formats the superior validation of SHACL can be applied. Web user interfaces often support client side validation this should be applied whenever possible.|
 |**Priority**|High|
 
 
