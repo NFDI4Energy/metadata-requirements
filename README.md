@@ -1,13 +1,8 @@
-# Requirements Template
-This is a repository template to manage the requirements analysis. 
-For information regarding the Configuration of this repository please look through the [CONFIGURATION.md](CONFIGURATION.MD).
+# NFDI4Energy Metadata Requirement Collection
 
-In this file a README Template will follow:
-
-# NFDI4Energy [TODO_Type] Requirement Collection
-
-This repository serves as the general collection point for NFDI4Energy [TODO_Type] requirements.
+This repository serves as the general collection point for NFDI4Energy metadata requirements.
 The collection was set up as part of the [NFDI4Energy Consortia](https://nfdi4energy.uol.de/).
+The repo is based on the [NFDI4Energy Requirement Template Repo](https://github.com/NFDI4Energy/requirements_template).
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -43,7 +38,7 @@ The rest of the files in this repository are used to create a Website that can b
 ### How to look at the Requirements
 
 To look through the requirements there are two options.
-You can go to this [website](TODO LINK). The site was built using [GitHub Pages](https://pages.github.com/). It should look like this:
+You can go to this [website](https://NFDI4Energy.github.io/metadata-requirements/). The site was built using [GitHub Pages](https://pages.github.com/). It should look like this:
 
 
 ![Screenshot of the Requirements Website with example test data](TODO/path/to/img.png "Screenshot of the Website with Example Data")
@@ -112,4 +107,3 @@ Here is a list of NFDI4Energy Requirements repositories:
 - [NFDI4Energy Service Requirements](https://github.com/NFDI4Energy/nfdi4energy-service-requirements)
 - [NFDI4Energy Simulation Service Requirements](https://github.com/NFDI4Energy/simulation-service-requirements)
 - [NFDI4Energy Metadata Requirements](https://github.com/NFDI4Energy/metadata-requirements)
-- TODO: Create Issue in Repository Template to add you repository
