@@ -1,0 +1,138 @@
+name: New Requirement
+description: Suggest a new Requirement to be added to our existing collection.
+title: "[New Requirement]: "
+labels: ["new", "todo"]
+projects: [ ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing! 
+        Please use this template to propose a new requirement for the service portfolio of the NFDI4Energy platform. 
+        To help us understand and evaluate your proposal, please fill out all fields in this template as thoroughly as possible. 
+        Providing clear and detailed information ensures we can address your suggestion effectively.
+  - type: input
+    id: Title
+    attributes:
+      label: Title for the requirement
+      description: A name given to the resource ([DCMI Metadata Terms](http://purl.org/dc/terms/title)). E.g. Upload of User Data. The title given to the Requirement, should be written in English.
+      placeholder: E.g. Upload of User Data
+    validations:
+      required: true
+  - type: textarea
+    id: Description
+    attributes:
+      label: Description
+      description: Description of the Requirement, written in English, should also mention the goal of the description ([DCMI Metadata Terms](http://purl.org/dc/terms/description)). E.g. Users should be able to upload data to the repository. The data should have metadata attached to it.
+      placeholder: E.g. Users should be able to upload data to the repository
+    validations:
+      required: true
+  - type: textarea
+    id: Validation_of_Goal
+    attributes:
+      label: Validation of Goal (Optional)
+      description: Way to validate if goal is achieved (if applicable). E.g. The data can be uploaded through a form on the repository.
+      placeholder: E.g. The data can be uploaded through a form on the repository
+      value: "- [ ] 1. Goal that can be validated\n- [ ] 2. Goal that can be validated"
+    validations:
+      required: false
+  - type: textarea
+    id: Possible_Solution
+    attributes:
+      label: Possible Solution (Optional)
+      description: Written in english, gives possible Solutions to the Requirement in bullet points. E.g. A html form with metadata fields and a data upload field.
+      placeholder: E.g. A html form with metadata fields and a data upload field
+      value: "- [ ] 1. Possible solution\n- [ ] 2. Possible solution"
+    validations:
+      required: false
+  - type: input
+    id: Date_of_Creation
+    attributes:
+      label: Date of Creation
+      description: YYYY-MM-DD Format, shows the  time this requirement was first added ([DCMI Metadata Terms](http://purl.org/dc/terms/created)). E.g. 2024-12-30.
+      placeholder: E.g. 2024-12-30
+    validations:
+      required: true
+  - type: input
+    id: Creator
+    attributes:
+      label: Creator
+      description: The Name of the person or ORCID that wrote the Requirement ([DCMI Metadata Terms](http://purl.org/dc/terms/creator)). E.g. Alexandro Steinert.
+      placeholder: E.g. Max Mustermann
+    validations:
+      required: true
+  - type: input
+    id: Origination_Institute
+    attributes:
+      label: Origination Institute
+      description: The Name of the institute or ROR that wrote the Requirement. E.g. OFFIS e.V.
+      placeholder: E.g. OFFIS e.V.
+    validations:
+      required: true
+  - type: dropdown
+    id: External
+    attributes:
+      label: External
+      description: Please rank the requirement on the scale from high to low.
+      options:
+        - 'Yes'
+        - 'No'
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: Responsibility
+    attributes:
+      label: Responsibility (Optional)
+      description: The name of the Task Area and if applicable, the  person that is responsible for the Solution of the Requirement ([DCMI Metadata Terms](http://purl.org/dc/terms/contributor)). E.g. Task Area 1.
+      placeholder: E.g. Task Area 1.
+    validations:
+      required: false
+  - type: input
+    id: Target_Service
+    attributes:
+      label: Target Service
+      description: The Service this Requirement targets, if multiple apply list all of them, if the requirement is a general requirement for NFDI list general ([DCMI Metadata Terms](http://purl.org/dc/elements/1.1/subject)). E.g. Data Repository.
+      placeholder: E.g. Data Repository.
+    validations:
+      required: true
+  - type: dropdown
+    id: Req_Type
+    attributes:
+      label: Req. Type
+      description: The type of Requirement (Functional or Non-Functional) ([DCMI Metadata Terms](http://purl.org/dc/terms/type)). E.g. functional.
+      options:
+        - functional
+        - non-functional
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: Parent_Requirement
+    attributes:
+      label: Parent Requirement (Optional)
+      description: The ID of the Requirement this Requirement is ordered under hierarchically ([DCMI Metadata Terms](http://purl.org/dc/terms/requires)). E.g. 2.
+      placeholder: E.g. 2.
+    validations:
+      required: false
+  - type: dropdown
+    id: Benefit
+    attributes:
+      label: Benefit of Requirement.
+      description: Benefit for the Community. This is a preliminary Estimation. Three options High, Medium, Low
+      options:
+        - High
+        - Medium
+        - Low
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details (Optional)
+      description: How can we get in touch with you if we need more information?
+      placeholder: E.g. email@example.com
+    validations:
+      required: false
+  

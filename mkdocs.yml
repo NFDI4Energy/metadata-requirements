@@ -1,0 +1,35 @@
+site_name: NFDI4Energy Requirements Template
+site_url: https://nfdi4energy.github.io/requirements_template/content/
+docs_dir: docs
+theme:
+  name: material
+  favicon: img/nfdi4energy_icon_rgb_small.png
+  logo: img/nfdi4energy_logo_cut.png
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  # the following adds a dark mode toggle - however at the moment this looks bad for the search panes and column visibility dropdown of the data table
+  # palette:
+  # # Palette toggle for dark mode
+  # - scheme: slate
+  #   primary: custom
+  #   toggle:
+  #     icon: material/brightness-4
+  #     name: Switch to light mode
+  # # Palette toggle for light mode
+  # - scheme: default
+  #   primary: custom
+  #   toggle:
+  #     icon: material/brightness-7 
+  #     name: Switch to dark mode
+extra_css:
+  - https://cdn.datatables.net/v/dt/jq-3.7.0/jszip-3.10.1/dt-2.2.1/af-2.7.0/b-3.2.0/b-colvis-3.2.0/b-html5-3.2.0/b-print-3.2.0/cr-2.0.4/date-1.5.5/fc-5.0.4/fh-4.0.1/kt-2.12.1/r-3.0.3/rg-1.5.1/rr-1.5.0/sc-2.4.3/sb-1.8.1/sp-2.3.3/sl-3.0.0/sr-1.4.1/datatables.min.css
+  - custom.css
+repo_url: https://github.com/NFDI4Energy/requirements_template
+
+# Navigation
+nav:
+  - Home: ./index.md
+  - Requirement Table: ./content/requirements-table.md
+  - Requirement Metadata Schema: ./content/requirements_metadata_schema.md
