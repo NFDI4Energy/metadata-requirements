@@ -41,7 +41,7 @@ To look through the requirements there are two options.
 You can go to this [website](https://NFDI4Energy.github.io/metadata-requirements/). The site was built using [GitHub Pages](https://pages.github.com/). It should look like this:
 
 
-![Screenshot of the Requirements Website with example test data](TODO/path/to/img.png "Screenshot of the Website with Example Data")
+![Screenshot of the Requirements Website ](./docs/img/Example_Table.png "Screenshot of the Website")
 
 On this website you can see an interactive table, this table can be sorted according to the different columns and also searched through the search bar.
 
