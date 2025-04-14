@@ -16,3 +16,15 @@ In the mkdocs.yml the following configurations have to be changed:
 - favicon (here images need to uploaded to the docs/img folder)
 - logo (here images need to uploaded to the docs/img folder)
 - repo_url
+
+## Pulling changes from the template
+
+If the template receives an update, you might want to use the updates within your repository.
+The simplest way to do this are the following steps
+```
+git remote add template git@github.com:NFDI4Energy/requirements_template.git
+git fetch --all
+git merge template/main --allow-unrelated-histories
+```
+
+This way you can merge in the updates from the template repo.
