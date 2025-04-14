@@ -43,7 +43,7 @@ You can go to this [website](https://NFDI4Energy.github.io/metadata-requirements
 
 ![Screenshot of the Requirements Website with example test data](TODO/path/to/img.png "Screenshot of the Website with Example Data")
 
-On this website you can see a interactive table, this table can be sorted according to the different columns and also searched throuh the search bar.
+On this website you can see an interactive table, this table can be sorted according to the different columns and also searched through the search bar.
 
 Another way to look through the requirements is by downloading the .csv file and opening it locally on your computer.
 The file can be opened by any current spreadsheet software such as [Libre Office Calc](https://de.libreoffice.org/discover/calc/) or [Microsoft Excel](https://www.microsoft.com/de-de/microsoft-365/excel?market=de).
@@ -55,18 +55,18 @@ You can download it, by clicking on the requirement folder in the repository and
 >[!IMPORTANT]
 >Anybody that has Requirements is encouraged to contribute to this collection, regardless if they are affiliated with NFDI4Energy or not.
 
-To add Requirements to this collection there are three possible ways, which will be explained in the following sections. The only method not requiring a Github account is found in <a href="#contribute-through-an-email">Contribute through an E-Mail</a>.
+To add Requirements to this collection there are three possible ways, which will be explained in the following sections. The only method not requiring a GitHub account is found in <a href="#contribute-through-an-email">Contribute through an E-Mail</a>.
 
-The Reqirments must follow the [Meadata Schema](#the-metadata-schema), there are optional fields and required fields, a requirement will not be accepted if all required fields are not filled in.
+The requirements must follow the [Metadata Schema](#the-metadata-schema), there are optional fields and required fields, a requirement will not be accepted if all required fields are not filled in.
 
 ### Contribute through an Issue
 
 >[!NOTE]
 >A GitHub Account is needed for this Contribution Method.
 
-This is the preffered method for adding a requirement into the collection and recommended for people not familiar with using git or csv files.
+This is the preferred method for adding a requirement into the collection and recommended for people not familiar with using git or CSV files.
 This method consists of an issue being opened that contains the relevant requirement information. We have devised a special issue template, that will make adding the requirement easier.
-To add an issue simple go to Issues->New Issue on the repository github page.
+To add an issue simple go to Issues→New Issue on the repository GitHub page.
 
 ### Contribute through a Pull Request
 
@@ -76,10 +76,10 @@ To add an issue simple go to Issues->New Issue on the repository github page.
 This is a secondary method for adding requirements, it is for users that are familiar with using git.
 It consists of the following steps:
 
-1. Creating a normal Issue [Todo add issue template]
+1. Creating a normal Issue [TODO add issue template]
 2. Cloning the repository
 3. Creating a branch from the main branch
-4. Adding the new requirements into the csv with the tool of your choice
+4. Adding the new requirements into the CSV with the tool of your choice
 5. Pushing the changes
 6. Submitting a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
 
@@ -97,7 +97,7 @@ The Metadata Schema can be found in the [Metadata Schema.md](./docs/content/requ
 The different fields are also explained in the Markdown file.
 
 >[!WARNING]
->Keep in mind, that some of the fields are optional, whil other are not. A requirement is only accepted when all required fields are filled in.
+>Keep in mind, that some of the fields are optional, while others are not. A requirement is only accepted when all required fields are filled in.
 
 ## Other NFDI4Energy Requirements
 
